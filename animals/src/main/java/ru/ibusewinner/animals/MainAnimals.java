@@ -42,6 +42,6 @@ public class MainAnimals extends JavaPlugin{
 		Bukkit.getPluginCommand("alholo").setExecutor(new CmdShowLBAnimals());
 		Bukkit.getPluginCommand("algc").setExecutor(new CmdGiveGcAnimals());
 		Bukkit.getPluginCommand("donate").setExecutor(new CmdDonateAnimals());
-		Bukkit.getPluginCommand("levelup").setExecutor(new CmdLevelUp());
+		Bukkit.getPluginCommand("levelup").setExecutor(new OooOOOoo_Cmd_LevelUp_OoOooooO());
 	}
 }

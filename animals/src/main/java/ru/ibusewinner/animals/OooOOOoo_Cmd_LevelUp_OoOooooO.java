@@ -6,7 +6,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
-public class CmdLevelUp implements CommandExecutor{
+public class OooOOOoo_Cmd_LevelUp_OoOooooO implements CommandExecutor{
 
 	@Override
 	public boolean onCommand(CommandSender s, Command c, String l, String[] a) {

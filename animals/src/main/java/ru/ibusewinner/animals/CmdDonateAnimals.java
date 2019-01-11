@@ -53,7 +53,8 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 	@EventHandler
 	public void onClick(InventoryClickEvent e) {
 		Player p = (Player)e.getWhoClicked();
-		
+
+		e.setCancelled(true);
 		if(e.getInventory().getName().equalsIgnoreCase(donator)) {
 			e.setCancelled(true);
 			
@@ -61,6 +62,7 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 			{
 				if (DonateAPI.removeGc(p.getName(), 200) == 1)
 				{
+					
 					Booostoor b = new Booostoor();
 					Booostoor.gboost = 30;
 					Booostoor.gboostm = 2;					
@@ -74,7 +76,12 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 				if (DonateAPI.removeGc(p.getName(), 150) == 1)
 					APIAnimals.setLocalBoost(p, 2);
 			}
-			else return;
+			else
+			{ 
+				e.setCancelled(true);
+				return;
+			}
+			e.setCancelled(true);
 		}
 	}
 
