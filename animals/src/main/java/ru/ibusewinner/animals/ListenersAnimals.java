@@ -100,13 +100,44 @@ public class ListenersAnimals implements Listener{
 			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
 			DisguiseAPI.disguiseToAll(player,parrot);
 		}
-		
-		CmdShowLBAnimals.holo.displayHolo(player);
+		try {
+			CmdShowLBAnimals.holo.displayHolo(player);
+		}catch(Exception ex) {
+			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§9meow §d;3");
+		}
 		
 		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 			public void run() {
 				for(Player pl : Bukkit.getOnlinePlayers()) {
 					APIAnimals.addBalBoost(pl);
+					
+					if(APIAnimals.getHum1(player) == 1) {
+						APIAnimals.addHearts(player,1);
+					}
+					if(APIAnimals.getHum2(player) == 1) {
+						APIAnimals.addHearts(player,2);
+					}
+					if(APIAnimals.getHum3(player) == 1) {
+						APIAnimals.addHearts(player,3);
+					}
+					if(APIAnimals.getHum4(player) == 1) {
+						APIAnimals.addHearts(player,4);
+					}
+					if(APIAnimals.getHum5(player) == 1) {
+						APIAnimals.addHearts(player,5);
+					}
+					if(APIAnimals.getHum6(player) == 1) {
+						APIAnimals.addHearts(player,6);
+					}
+					if(APIAnimals.getHum7(player) == 1) {
+						APIAnimals.addHearts(player,7);
+					}
+					if(APIAnimals.getHum8(player) == 1) {
+						APIAnimals.addHearts(player,8);
+					}
+					if(APIAnimals.getHum9(player) == 1) {
+						APIAnimals.addHearts(player,9);
+					}
 				}
 			}
 		},0,20*2);

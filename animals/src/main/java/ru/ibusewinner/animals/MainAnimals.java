@@ -21,10 +21,14 @@ public class MainAnimals extends JavaPlugin{
 	@Override
 	public void onDisable() {
 		MySQLAnimals.disconnect();
-		for(Player pl : Bukkit.getOnlinePlayers()) {
-			if(TTA_Methods.hasBossBar(pl) == true) {
-				TTA_Methods.removeBossBar(pl);
+		try {
+			for(Player pl : Bukkit.getOnlinePlayers()) {
+				if(TTA_Methods.hasBossBar(pl) == true) {
+					TTA_Methods.removeBossBar(pl);
+				}
 			}
+		}catch(Exception ex) {
+			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§cНикаких бустеров нет!");
 		}
 	}
 	

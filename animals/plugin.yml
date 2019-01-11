@@ -1,6 +1,6 @@
 name: MavenAnimalsLive
 author: iBuseWinner
-version: 0.2.101_352
+version: 0.2.103_369
 main: ru.ibusewinner.animals.MainAnimals
 description: AnimalsLive plugin!
 
@@ -17,3 +17,5 @@ commands:
   leaderboard:
   alholo:
   levelup:
+  algc:
+  donate:

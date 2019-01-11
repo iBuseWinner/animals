@@ -2,6 +2,7 @@ package ru.ibusewinner.animals;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -20,7 +21,11 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 	public static Inventory donate = Bukkit.createInventory(null,9,donator);
 	
 	ItemStack boost_30m_global = new ItemStack(Material.GOLD_INGOT,1);
+<<<<<<< HEAD
+	ItemStack boost_30m_local = new ItemStack(Material.GOLD_INGOT,1);
+=======
 	ItemStack boost_30m_local = new ItemStack(Material.DIAMOND,1);
+>>>>>>> 32a3c0ef41e8d3db5a691f7f91df08f05bbc7a75
 	
 	
 	@Override
@@ -31,6 +36,10 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 			if(c.getName().equalsIgnoreCase("donate")) {
 				if(a.length == 0) {
 					Player send = (Player)s;
+<<<<<<< HEAD
+					
+=======
+>>>>>>> 32a3c0ef41e8d3db5a691f7f91df08f05bbc7a75
 					ItemMeta boost_30m_global_m = boost_30m_global.getItemMeta();
 					boost_30m_global_m.setDisplayName("§5Глобальный §fбустер §6х2 §fна §930 минут");
 					boost_30m_global.setItemMeta(boost_30m_global_m);
@@ -42,6 +51,7 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 					donate.setItem(5,boost_30m_local);
 					
 					send.openInventory(donate);
+					send.playSound(send.getLocation(),Sound.BLOCK_CHEST_OPEN,1.0f,1.0f);
 				}else {
 					s.sendMessage(MainAnimals.prefix+"§cИспользование: /donate");
 				}
@@ -57,11 +67,19 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 		e.setCancelled(true);
 		if(e.getInventory().getName().equalsIgnoreCase(donator)) {
 			e.setCancelled(true);
+<<<<<<< HEAD
+			
+			if(e.getSlot() == 3) 
+			{
+				e.setCancelled(true);
+				if (APIAnimals.removeGc(p.getName(), 200) == 1)
+=======
 			if(e.getSlot() == 3) 
 			{
 				int rgc = DonateAPI.removeGc(p.getName(), 200);
 				
 				if (rgc == 1)
+>>>>>>> 32a3c0ef41e8d3db5a691f7f91df08f05bbc7a75
 				{
 					
 					Booostoor b = new Booostoor();
@@ -78,6 +96,11 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 			}
 			else if(e.getSlot() == 5) 
 			{
+<<<<<<< HEAD
+				e.setCancelled(true);
+				if (APIAnimals.removeGc(p.getName(), 150) == 1)
+					APIAnimals.setLocalBoost(p, 2);
+=======
 				int rgc = DonateAPI.removeGc(p.getName(), 150);
 				
 				if (rgc == 1)
@@ -88,6 +111,7 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 				else if (rgc == 2) 
 					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов. Задонатьте ещё!");
 				else p.sendMessage(MainAnimals.prefix + "§cНеизвестная ошибка! Обратитесь к администратору.");
+>>>>>>> 32a3c0ef41e8d3db5a691f7f91df08f05bbc7a75
 			}
 			else
 			{ 
