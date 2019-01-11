@@ -19,13 +19,10 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 	
 	public static Inventory donate = Bukkit.createInventory(null,27,donator);
 	
-	ItemStack boost_30m_x2 = new ItemStack(Material.GOLD_NUGGET,1);
-	ItemStack boost_1h_x2 = new ItemStack(Material.GOLD_INGOT,1);
-	ItemStack boost_2h_x2 = new ItemStack(Material.GOLD_BLOCK,1);
+	ItemStack boost_30m_local = new ItemStack(Material.GOLD_INGOT,1);
 	
-	ItemStack boost_30m_x3 = new ItemStack(Material.DIAMOND,1);
-	ItemStack boost_1h_x3 = new ItemStack(Material.DIAMOND_BLOCK,1);
-	ItemStack boost_2h_x3 = new ItemStack(Material.OBSIDIAN,1);
+	ItemStack boost_30m_glob = new ItemStack(Material.DIAMOND,1);
+	
 	
 	
 	@Override
@@ -37,31 +34,14 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 				if(a.length == 0) {
 					Player send = (Player)s;
 					
-					ItemMeta boost_30m_x2_m = boost_30m_x2.getItemMeta();
+					ItemMeta boost_30m_x2_m = boost_30m_local.getItemMeta();
 					boost_30m_x2_m.setDisplayName("§5Глобальный §fбустер §6х2 §fна §930 минут");
-					boost_30m_x2.setItemMeta(boost_30m_x2_m);
-					ItemMeta boost_1h_x2_m = boost_1h_x2.getItemMeta();
-					boost_1h_x2_m.setDisplayName("§5Глобальный §fбустер §6х2 §fна §91 час");
-					boost_1h_x2.setItemMeta(boost_1h_x2_m);
-					ItemMeta boost_2h_x2_m = boost_1h_x2.getItemMeta();
-					boost_2h_x2_m.setDisplayName("§5Глобальный §fбустер §6х2 §fна §92 часа");
-					boost_2h_x2.setItemMeta(boost_2h_x2_m);
+					boost_30m_local.setItemMeta(boost_30m_x2_m);
 					
-					ItemMeta boost_30m_x3_m = boost_30m_x3.getItemMeta();
-					boost_30m_x3_m.setDisplayName("§5Глобальный §fбустер §6х3 §fна §930 минут");
-					boost_30m_x3.setItemMeta(boost_30m_x3_m);
-					ItemMeta boost_1h_x3_m = boost_1h_x3.getItemMeta();
-					boost_1h_x3_m.setDisplayName("§5Глобальный §fбустер §6х3 §fна §91 час");
-					boost_1h_x3.setItemMeta(boost_1h_x3_m);
-					ItemMeta boost_2h_x3_m = boost_2h_x3.getItemMeta();
-					boost_2h_x3_m.setDisplayName("§5Глобальный §fбустер §6х3 §fна §92 часа");
 					
 					donate.setItem(10,boost_30m_x2);
 					donate.setItem(11,boost_1h_x2);
-					donate.setItem(12,boost_2h_x2);
-					donate.setItem(16,boost_30m_x3);
-					donate.setItem(17,boost_30m_x2);
-					donate.setItem(18,boost_2h_x3);
+					
 					
 					send.openInventory(donate);
 				}else {
