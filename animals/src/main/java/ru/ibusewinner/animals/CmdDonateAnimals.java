@@ -58,21 +58,24 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 		if(e.getInventory().getName().equalsIgnoreCase(donator)) {
 			e.setCancelled(true);
 			
-			if(e.getSlot() == 10) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 11) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 12) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 16) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 17) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 18) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else {
-				return;
+			if(e.getSlot() == 3) 
+			{
+				if (DonateAPI.removeGc(p.getName(), 200) == 1)
+				{
+					Booostoor b = new Booostoor();
+					b.gboost = 30;
+					b.gboostm = 2;					
+					b.agboost = 30;
+					b.agboostm = 2;
+					b.timer();
+				}
 			}
+			else if(e.getSlot() == 5) 
+			{
+				if (DonateAPI.removeGc(p.getName(), 150) == 1)
+					APIAnimals.setLocalBoost(p, 2);;
+			}
+			else return;
 		}
 	}
 
