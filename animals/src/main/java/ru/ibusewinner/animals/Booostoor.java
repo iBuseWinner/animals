@@ -16,32 +16,35 @@ public class Booostoor {
 	public static int gboostm = 1;
 	
 	public static String booster = " ";
-	
+	private int taskId = 0;
 	@SuppressWarnings("deprecation")
 	public void timer() {
-		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
+		
+		taskId = Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 			
 			@Override
 			public void run() {
-				if(agboost == 0){
+				
+				if(agboost <= 0){
 					for(Player pl : Bukkit.getOnlinePlayers()) {
 						TTA_Methods.removeBossBar(pl);
+						Bukkit.getScheduler().cancelTask(taskId);
 					}
-					
 				}else {
 					agboost--;
 					TTA_Methods.setBarTitle("§aГлобальный бустер §9x"+agboostm+" §aот админа §5"+booster+" §6("+agboost+"минут)");
 				}
 				
-				if(gboost == 0) {
+				if(gboost <= 0) {
 					for(Player pl : Bukkit.getOnlinePlayers()) {
 						TTA_Methods.removeBossBar(pl);
+						Bukkit.getScheduler().cancelTask(taskId);
 					}
 				}else {
 					gboost--;
 					TTA_Methods.setBarTitle("§aГлобальный бустер §9x"+agboostm+" §aот игрока §5"+booster+" §6("+agboost+"минут)");
 				}
-			}
+			} 
 		},0,20*60);
 	}
 	
