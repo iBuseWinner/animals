@@ -19,10 +19,15 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 	
 	public static Inventory donate = Bukkit.createInventory(null,9,donator);
 	
+<<<<<<< HEAD
 	ItemStack boost_30m_local = new ItemStack(Material.GOLD_INGOT,1);
 	
 	ItemStack boost_30m_glob = new ItemStack(Material.DIAMOND,1);
 	
+=======
+	ItemStack boost_30m_global = new ItemStack(Material.GOLD_INGOT,1);
+	ItemStack boost_30m_local = new ItemStack(Material.GOLD_INGOT,1);
+>>>>>>> 702030ccf77478ea6021b03ffb1af9812b77f9cf
 	
 	
 	@Override
@@ -34,6 +39,7 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 				if(a.length == 0) {
 					Player send = (Player)s;
 					
+<<<<<<< HEAD
 					ItemMeta boost_30m_x2_m = boost_30m_local.getItemMeta();
 					boost_30m_x2_m.setDisplayName("§5Локальный §fбустер §6х2 §fна §930 минут");
 					boost_30m_local.setItemMeta(boost_30m_x2_m);
@@ -46,6 +52,17 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 					donate.setItem(3,boost_30m_local);
 					donate.setItem(5,boost_30m_glob);
 					
+=======
+					ItemMeta boost_30m_global_m = boost_30m_global.getItemMeta();
+					boost_30m_global_m.setDisplayName("§5Глобальный §fбустер §6х2 §fна §930 минут");
+					boost_30m_global.setItemMeta(boost_30m_global_m);
+					ItemMeta boost_30m_local_m = boost_30m_local.getItemMeta();
+					boost_30m_local_m.setDisplayName("§5Локальный §fбустер §6х2 §fна §930 минут");
+					boost_30m_local.setItemMeta(boost_30m_local_m);
+					
+					donate.setItem(3,boost_30m_global);
+					donate.setItem(5,boost_30m_local);
+>>>>>>> 702030ccf77478ea6021b03ffb1af9812b77f9cf
 					
 					send.openInventory(donate);
 				}else {

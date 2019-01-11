@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class OoOooo_moja_oborona_oOOoooo {
+public class DonateAPI {
 	
 	public static void createTable(){
 		try{
@@ -72,30 +72,39 @@ public class OoOooo_moja_oborona_oOOoooo {
 		}
 		return -1;
 	}
-	
-	public static void removeGc(Player p, int sum) {
+
+	// returns: 1 - okay; 2 - no money; 3 - error; other - ???
+	public static int removeGc(Player p, int sum) {
 		try {
 			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE donate SET gc= ? WHERE nick= ?");
 			ps.setString(2, p.getName());
+			if (getGc(p) - sum < 0)
+				return 2;
 			ps.setInt(1,getGc(p)-sum);
 			ResultSet rs = ps.executeQuery();
 			rs.close();
 			rs.close();
+			return 1;
 		}catch(Exception ex) {
 			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§cЧто-то пошло не так!");
+			return 3;
 		}
 	}
-	
-	public static void removeGc(String name, int sum) {
+	// returns: 1 - okay; 2 - no money; 3 - error; other - ???
+	public static int removeGc(String name, int sum)
+	{
 		try {
 			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE donate SET gc= ? WHERE nick= ?");
 			ps.setString(2, name);
+			if (getGc(name) - sum < 0)
+				return 2;
 			ps.setInt(1,getGc(name)-sum);
 			ResultSet rs = ps.executeQuery();
 			rs.close();
-			rs.close();
+			return 1;
 		}catch(Exception ex) {
 			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§cЧто-то пошло не так!");
+			return 3;
 		}
 	}
 	
