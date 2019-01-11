@@ -6,7 +6,7 @@ import java.sql.ResultSet;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
-public class OoOooo_moja_oborona_oOOoooo {
+public class DonateAPI {
 	
 	public static void createTable(){
 		try{
