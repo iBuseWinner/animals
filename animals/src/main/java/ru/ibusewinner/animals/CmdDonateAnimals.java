@@ -17,7 +17,7 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 	
 	public static String donator = "§b§lДонат-меню §8|| Plugin made by iBuseWinner";
 	
-	public static Inventory donate = Bukkit.createInventory(null,27,donator);
+	public static Inventory donate = Bukkit.createInventory(null,9,donator);
 	
 	ItemStack boost_30m_local = new ItemStack(Material.GOLD_INGOT,1);
 	
@@ -35,12 +35,16 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 					Player send = (Player)s;
 					
 					ItemMeta boost_30m_x2_m = boost_30m_local.getItemMeta();
-					boost_30m_x2_m.setDisplayName("§5Глобальный §fбустер §6х2 §fна §930 минут");
+					boost_30m_x2_m.setDisplayName("§5Локальный §fбустер §6х2 §fна §930 минут");
 					boost_30m_local.setItemMeta(boost_30m_x2_m);
 					
+					ItemMeta boost_30m_glob_m = boost_30m_glob.getItemMeta();
+					boost_30m_glob_m.setDisplayName("§5Глобальный §fбустер §6х2 §fна §930 минут");
+					boost_30m_glob.setItemMeta(boost_30m_glob_m);
 					
-					donate.setItem(10,boost_30m_x2);
-					donate.setItem(11,boost_1h_x2);
+					
+					donate.setItem(3,boost_30m_local);
+					donate.setItem(5,boost_30m_glob);
 					
 					
 					send.openInventory(donate);
@@ -59,17 +63,9 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 		if(e.getInventory().getName().equalsIgnoreCase(donator)) {
 			e.setCancelled(true);
 			
-			if(e.getSlot() == 10) {
+			if(e.getSlot() == 3) {
 				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 11) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 12) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 16) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 17) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 18) {
+			}else if(e.getSlot() == 5) {
 				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
 			}else {
 				return;
