@@ -22,7 +22,7 @@ public class CmdGiveGcAnimals implements CommandExecutor{
 							try {
 								String name = a[1];
 								int sum = Integer.parseInt(a[2]);
-								DonateAPI.addGc(name, sum);
+								APIAnimals.addGc(name, sum);
 								Player t = Bukkit.getPlayer(name);
 								t.sendMessage(MainAnimals.prefix+"§aАдминистратор §c"+s.getName()+"§a подарил Вам §9"+sum+"гк§a!");
 								s.sendMessage(MainAnimals.prefix+"§9"+sum+"гк §aбыло отправлено на счёт игроку §1"+name);
@@ -32,7 +32,7 @@ public class CmdGiveGcAnimals implements CommandExecutor{
 						}else if(a[0].equalsIgnoreCase("get")) {
 							try {
 								String name = a[1];
-								int count = DonateAPI.getGc(name);
+								int count = APIAnimals.getGc(name);
 								s.sendMessage(MainAnimals.prefix+"§aИгрок §1"+name+"§a имеет §9"+count+"гк§a!");
 							}catch(Exception ex) {
 								s.sendMessage(MainAnimals.prefix+"§cИгрок не найден!");
@@ -41,10 +41,19 @@ public class CmdGiveGcAnimals implements CommandExecutor{
 							try {
 								String name = a[1];
 								int sum = Integer.parseInt(a[2]);
-								DonateAPI.removeGc(name, sum);
+								APIAnimals.removeGc(name, sum);
 								Player t = Bukkit.getPlayer(name);
 								t.sendMessage(MainAnimals.prefix+"§aАдминистратор §c"+s.getName()+"§a забрал у Вас §9"+sum+"гк§a!");
 								s.sendMessage(MainAnimals.prefix+"§9"+sum+"гк §aбыло забрано со счёта игрока §1"+name);
+							}catch(Exception ex) {
+								s.sendMessage(MainAnimals.prefix+"§cИгрок не найден!");
+							}
+						}else if(a[0].equalsIgnoreCase("mygc")) {
+							try {
+								Player send = (Player)s;
+								String name = s.getName();
+								int count = APIAnimals.getGc(send);
+								s.sendMessage(MainAnimals.prefix+"§aИгрок §1"+name+"§a имеет §9"+count+"гк§a!");
 							}catch(Exception ex) {
 								s.sendMessage(MainAnimals.prefix+"§cИгрок не найден!");
 							}
@@ -55,7 +64,7 @@ public class CmdGiveGcAnimals implements CommandExecutor{
 				}
 			}
 		}
-		return false;
+		return true;
 	}
 
 }

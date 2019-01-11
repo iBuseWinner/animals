@@ -3,6 +3,7 @@ package ru.ibusewinner.animals;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 
+import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class APIAnimals {
@@ -10,7 +11,7 @@ public class APIAnimals {
 	public static void createTable(){
 		try{
 			PreparedStatement ps = MySQLAnimals.getStatement("CREATE TABLE IF NOT EXISTS players (name VARCHAR(100), uuid VARCHAR(100), animal INT(100)"
-					+ ", balance INT(100), level INT(100), income INT(100), localboost INT(100), respawns INT(100), hearts INT(100), humans INT(100), bizs INT(100)"
+					+ ", gc INT(100), balance INT(100), level INT(100), income INT(100), localboost INT(100), respawns INT(100), hearts INT(100), humans INT(100), bizs INT(100)"
 					+ ", shelter BOOLEAN, bizkol INT(100), bizfarm INT(100), bizderpri INT(100), bizgorpri INT(100), bizcirc INT(100), bizanipoy INT(100)"
 					+ ", bizanipol INT(100), bizanicou INT(100), hum1 BOOLEAN, hum2 BOOLEAN, hum3 BOOLEAN, hum4 BOOLEAN, hum5 BOOLEAN, hum6 BOOLEAN, hum7 BOOLEAN"
 					+ ", hum8 BOOLEAN, hum9 BOOLEAN)");
@@ -22,22 +23,22 @@ public class APIAnimals {
 
 	public static void register(Player p){
 		try{
-			PreparedStatement ps = MySQLAnimals.getStatement("INSERT INTO players (name, uuid, animal, balance, level, income, localboost, respawns, hearts, humans, bizs"
+			PreparedStatement ps = MySQLAnimals.getStatement("INSERT INTO players (name, uuid, animal, gc, balance, level, income, localboost, respawns, hearts, humans, bizs"
 					+ ", shelter, bizkol, bizfarm, bizderpri, bizgorpri, bizcirc, bizanipoy, bizanipol, bizanicou, hum1, hum2, hum3, hum4, hum5, hum6, hum7, hum8, hum9"
-					+ ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
+					+ ") VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)");
 			ps.setString(1,p.getName());
 			ps.setString(2,p.getUniqueId().toString());
 			ps.setInt(3,0);
 			ps.setInt(4,0);
 			ps.setInt(5,0);
 			ps.setInt(6,0);
-			ps.setInt(7,1);
-			ps.setInt(8,0);
+			ps.setInt(7,0);
+			ps.setInt(8,1);
 			ps.setInt(9,0);
 			ps.setInt(10,0);
 			ps.setInt(11,0);
-			ps.setBoolean(12,false);
-			ps.setInt(13,0);
+			ps.setInt(12,0);
+			ps.setBoolean(13,false);
 			ps.setInt(14,0);
 			ps.setInt(15,0);
 			ps.setInt(16,0);
@@ -45,7 +46,7 @@ public class APIAnimals {
 			ps.setInt(18,0);
 			ps.setInt(19,0);
 			ps.setInt(20,0);
-			ps.setBoolean(21,false);
+			ps.setInt(21,0);
 			ps.setBoolean(22,false);
 			ps.setBoolean(23,false);
 			ps.setBoolean(24,false);
@@ -54,6 +55,7 @@ public class APIAnimals {
 			ps.setBoolean(27,false);
 			ps.setBoolean(28,false);
 			ps.setBoolean(29,false);
+			ps.setBoolean(30,false);
 			ps.executeUpdate();
 			ps.close();
 		}catch(Exception ex){
@@ -68,7 +70,7 @@ public class APIAnimals {
 			ResultSet rs = ps.executeQuery();
 			boolean user = rs.next();
 			rs.close();
-			rs.close();
+			ps.close();
 			return user;
 		}catch(Exception ex){
 			ex.printStackTrace();
@@ -83,7 +85,7 @@ public class APIAnimals {
 			ResultSet rs = ps.executeQuery();
 			boolean user = rs.next();
 			rs.close();
-			rs.close();
+			ps.close();
 			return user;
 		}catch(Exception ex){
 			ex.printStackTrace();
@@ -264,7 +266,7 @@ public class APIAnimals {
 			ps.setString(1, name);
 			ResultSet rs = ps.executeQuery();
 			rs.next();
-			int boost = rs.getInt("boost");
+			int boost = rs.getInt("localboost");
 			rs.close();
 			ps.close();
 			return boost;
@@ -279,7 +281,7 @@ public class APIAnimals {
 			ps.setString(1, p.getUniqueId().toString());
 			ResultSet rs = ps.executeQuery();
 			rs.next();
-			int boost = rs.getInt("boost");
+			int boost = rs.getInt("localboost");
 			rs.close();
 			ps.close();
 			return boost;
@@ -290,7 +292,7 @@ public class APIAnimals {
 	}
 	public static void setLocalBoost(Player p, int boost) {
 		try{
-			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET boost= ? WHERE uuid= ?");
+			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET localboost= ? WHERE uuid= ?");
 			ps.setInt(1,getLocalBoost(p)*boost);
 			ps.setString(2,p.getUniqueId().toString());
 			ps.executeUpdate();
@@ -301,7 +303,7 @@ public class APIAnimals {
 	}
 	public static void removeLocalBoost(Player p, int boost) {
 		try{
-			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET boost= ? WHERE uuid= ?");
+			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET localboost= ? WHERE uuid= ?");
 			ps.setInt(1,getLocalBoost(p)/boost);
 			ps.setString(2,p.getUniqueId().toString());
 			ps.executeUpdate();
@@ -1080,5 +1082,101 @@ public class APIAnimals {
 			ex.printStackTrace();
 		}
 		return -1;
+	}
+	
+	
+	
+	
+	
+	public static int getGc(Player p) {
+		try {
+			PreparedStatement ps = MySQLAnimals.getStatement("SELECT * FROM players WHERE name= ?");
+			ps.setString(1, p.getName());
+			ResultSet rs = ps.executeQuery();
+			int gc = rs.getInt("gc");
+			rs.close();
+			ps.close();
+			return gc;
+		}catch(Exception ex) {
+			//Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§cЧто-то пошло не так!");
+			ex.printStackTrace();
+		}
+		return -1;
+	}
+	
+	public static int getGc(String name) {
+		try {
+			PreparedStatement ps = MySQLAnimals.getStatement("SELECT * FROM players WHERE name= ?");
+			ps.setString(1,name);
+			ResultSet rs = ps.executeQuery();
+			int gc = rs.getInt("gc");
+			rs.close();
+			ps.close();
+			return gc;
+		}catch(Exception ex) {
+			//Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§cЧто-то пошло не так!");
+			ex.printStackTrace();
+		}
+		return -1;
+	}
+
+	// returns: 1 - okay; 2 - no money; 3 - error; other - ???
+	public static int removeGc(Player p, int sum) {
+		try {
+			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET gc= ? WHERE name= ?");
+			ps.setString(2, p.getName());
+			if (getGc(p) - sum < 0)
+				return 2;
+			ps.setInt(1,getGc(p)-sum);
+			ResultSet rs = ps.executeQuery();
+			rs.close();
+			ps.close();
+			return 1;
+		}catch(Exception ex) {
+			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§cЧто-то пошло не так!");
+			return 3;
+		}
+	}
+	// returns: 1 - okay; 2 - no money; 3 - error; other - ???
+	public static int removeGc(String name, int sum)
+	{
+		try {
+			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET gc= ? WHERE name= ?");
+			ps.setString(2, name);
+			if (getGc(name) - sum < 0)
+				return 2;
+			ps.setInt(1,getGc(name)-sum);
+			ResultSet rs = ps.executeQuery();
+			rs.close();
+			return 1;
+		}catch(Exception ex) {
+			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§cЧто-то пошло не так!");
+			return 3;
+		}
+	}
+	
+	public static void addGc(Player p, int sum) {
+		try {
+			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET gc= ? WHERE name= ?");
+			ps.setString(2, p.getName());
+			ps.setInt(1,getGc(p)+sum);
+			ResultSet rs = ps.executeQuery();
+			rs.close();
+			ps.close();
+		}catch(Exception ex) {
+			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§cЧто-то пошло не так!");
+		}
+	}
+	public static void addGc(String name, int sum) {
+		try {
+			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET gc= ? WHERE name= ?");
+			ps.setString(2,name);
+			ps.setInt(1,getGc(name)+sum);
+			ResultSet rs = ps.executeQuery();
+			rs.close();
+			ps.close();
+		}catch(Exception ex) {
+			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§cЧто-то пошло не так!");
+		}
 	}
 }

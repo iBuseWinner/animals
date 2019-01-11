@@ -2,6 +2,7 @@ package ru.ibusewinner.animals;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
+import org.bukkit.Sound;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -19,15 +20,8 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 	
 	public static Inventory donate = Bukkit.createInventory(null,9,donator);
 	
-<<<<<<< HEAD
-	ItemStack boost_30m_local = new ItemStack(Material.GOLD_INGOT,1);
-	
-	ItemStack boost_30m_glob = new ItemStack(Material.DIAMOND,1);
-	
-=======
 	ItemStack boost_30m_global = new ItemStack(Material.GOLD_INGOT,1);
 	ItemStack boost_30m_local = new ItemStack(Material.GOLD_INGOT,1);
->>>>>>> 702030ccf77478ea6021b03ffb1af9812b77f9cf
 	
 	
 	@Override
@@ -39,20 +33,6 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 				if(a.length == 0) {
 					Player send = (Player)s;
 					
-<<<<<<< HEAD
-					ItemMeta boost_30m_x2_m = boost_30m_local.getItemMeta();
-					boost_30m_x2_m.setDisplayName("§5Локальный §fбустер §6х2 §fна §930 минут");
-					boost_30m_local.setItemMeta(boost_30m_x2_m);
-					
-					ItemMeta boost_30m_glob_m = boost_30m_glob.getItemMeta();
-					boost_30m_glob_m.setDisplayName("§5Глобальный §fбустер §6х2 §fна §930 минут");
-					boost_30m_glob.setItemMeta(boost_30m_glob_m);
-					
-					
-					donate.setItem(3,boost_30m_local);
-					donate.setItem(5,boost_30m_glob);
-					
-=======
 					ItemMeta boost_30m_global_m = boost_30m_global.getItemMeta();
 					boost_30m_global_m.setDisplayName("§5Глобальный §fбустер §6х2 §fна §930 минут");
 					boost_30m_global.setItemMeta(boost_30m_global_m);
@@ -62,9 +42,9 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 					
 					donate.setItem(3,boost_30m_global);
 					donate.setItem(5,boost_30m_local);
->>>>>>> 702030ccf77478ea6021b03ffb1af9812b77f9cf
 					
 					send.openInventory(donate);
+					send.playSound(send.getLocation(),Sound.BLOCK_CHEST_OPEN,1.0f,1.0f);
 				}else {
 					s.sendMessage(MainAnimals.prefix+"§cИспользование: /donate");
 				}
@@ -80,17 +60,10 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 		if(e.getInventory().getName().equalsIgnoreCase(donator)) {
 			e.setCancelled(true);
 			
-<<<<<<< HEAD
-			if(e.getSlot() == 3) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else if(e.getSlot() == 5) {
-				p.sendMessage(MainAnimals.prefix+"§4Скоро...");
-			}else {
-				return;
-=======
 			if(e.getSlot() == 3) 
 			{
-				if (DonateAPI.removeGc(p.getName(), 200) == 1)
+				e.setCancelled(true);
+				if (APIAnimals.removeGc(p.getName(), 200) == 1)
 				{
 					Booostoor b = new Booostoor();
 					Booostoor.gboost = 30;
@@ -102,13 +75,9 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 			}
 			else if(e.getSlot() == 5) 
 			{
-				if (DonateAPI.removeGc(p.getName(), 150) == 1)
-<<<<<<< HEAD
-					APIAnimals.setLocalBoost(p, 2);;
->>>>>>> 17d510e9b25bbe9cb54da299a13d0ed5a60373e3
-=======
+				e.setCancelled(true);
+				if (APIAnimals.removeGc(p.getName(), 150) == 1)
 					APIAnimals.setLocalBoost(p, 2);
->>>>>>> 2d59bf114e68ae726ceaf9e5251a425dcbfbd8f3
 			}
 			else return;
 		}
