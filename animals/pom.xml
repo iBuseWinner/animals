@@ -26,10 +26,6 @@
 	  <url>http://jcenter.bintray.com</url>
 	</repository>
 	<repository>
-      <id>tta-repo</id>
-      <url>http://releases.herbystar.eu/</url>
-    </repository>
-	<repository>
         <id>spigot-repo</id>
         <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
     </repository>
