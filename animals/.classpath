@@ -22,5 +22,7 @@
 			<attribute name="maven.pomderived" value="true"/>
 		</attributes>
 	</classpathentry>
+	<classpathentry kind="lib" path="E:/Artyom/GC-Dev/LibsDisguises.jar"/>
+	<classpathentry kind="lib" path="E:/Artyom/GC-Dev/TTA-4.4.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
