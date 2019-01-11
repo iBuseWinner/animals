@@ -57,10 +57,11 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 		e.setCancelled(true);
 		if(e.getInventory().getName().equalsIgnoreCase(donator)) {
 			e.setCancelled(true);
-			
 			if(e.getSlot() == 3) 
 			{
-				if (DonateAPI.removeGc(p.getName(), 200) == 1)
+				int rgc = DonateAPI.removeGc(p.getName(), 200);
+				
+				if (rgc == 1)
 				{
 					
 					Booostoor b = new Booostoor();
@@ -69,12 +70,24 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 					Booostoor.agboost = 30;
 					Booostoor.agboostm = 2;
 					b.timer();
+					p.sendMessage(MainAnimals.prefix + "§aГлобальный буст x2 на 30 минут успешно куплен!");
 				}
+				else if (rgc == 2) 
+					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов. Задонатьте ещё!");
+				else p.sendMessage(MainAnimals.prefix + "§cНеизвестная ошибка! Обратитесь к администратору.");
 			}
 			else if(e.getSlot() == 5) 
 			{
-				if (DonateAPI.removeGc(p.getName(), 150) == 1)
+				int rgc = DonateAPI.removeGc(p.getName(), 150);
+				
+				if (rgc == 1)
+				{
 					APIAnimals.setLocalBoost(p, 2);
+					p.sendMessage(MainAnimals.prefix + "§aБуст x2 на 30 минут успешно куплен!");
+				}
+				else if (rgc == 2) 
+					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов. Задонатьте ещё!");
+				else p.sendMessage(MainAnimals.prefix + "§cНеизвестная ошибка! Обратитесь к администратору.");
 			}
 			else
 			{ 
