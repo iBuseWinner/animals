@@ -39,8 +39,8 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 					boost_30m_local_m.setDisplayName("§5Локальный §fбустер §6х2 §fна §930 минут");
 					boost_30m_local.setItemMeta(boost_30m_local_m);
 					
-					donate.setItem(10,boost_30m_global);
-					donate.setItem(11,boost_30m_local);
+					donate.setItem(0,boost_30m_global);
+					donate.setItem(1,boost_30m_local);
 					
 					send.openInventory(donate);
 				}else {
