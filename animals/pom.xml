@@ -26,16 +26,8 @@
 	  <url>http://jcenter.bintray.com</url>
 	</repository>
 	<repository>
-      <id>tta-repo</id>
-      <url>http://releases.herbystar.eu/</url>
-    </repository>
-	<repository>
         <id>spigot-repo</id>
         <url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-    </repository>
-	<repository>
-        <id>libsdisguises-repo</id>
-        <url>http://server.psmc.ca/repo/</url>
     </repository>
   </repositories>
 
@@ -46,29 +38,12 @@
             <version>1.12.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-<<<<<<< HEAD
-=======
-  <dependency>
-    <groupId>de.Herbystar</groupId>
-    <artifactId>TTA</artifactId>
-    <version>4.4</version>
-    <scope>provided</scope>
-  </dependency>
->>>>>>> 32a3c0ef41e8d3db5a691f7f91df08f05bbc7a75
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-<<<<<<< HEAD
-=======
-  <dependency>
-    <groupId>LibsDisguises</groupId>
-    <artifactId>LibsDisguises</artifactId>
-    <version>9.5.2</version>
-  </dependency>
->>>>>>> 32a3c0ef41e8d3db5a691f7f91df08f05bbc7a75
   </dependencies>
   
   <build>
