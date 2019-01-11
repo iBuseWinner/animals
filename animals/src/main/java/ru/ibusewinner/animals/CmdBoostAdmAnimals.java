@@ -32,17 +32,17 @@ public class CmdBoostAdmAnimals implements CommandExecutor{
 								TTA_Methods.createBossBar(pl,"§aГлобальный бустер §9x"+mnoz+" §aот админа §5"+s.getName()+" §6("+dur+"минут)",1.0,BarStyle.SOLID,BarColor.YELLOW,BarFlag.CREATE_FOG,true);
 							}
 							
-							OoOoOOo_Booostoor_oOOoOooOO.agboost = dur;
-							OoOoOOo_Booostoor_oOOoOooOO.agboostm = mnoz;
-							OoOoOOo_Booostoor_oOOoOooOO.booster = s.getName();
+							Booostoor.agboost = dur;
+							Booostoor.agboostm = mnoz;
+							Booostoor.booster = s.getName();
 							
 							Bukkit.broadcastMessage(MainAnimals.prefix+"§aГлобальный бустер §9x"+mnoz+" §aбыл включён администратором §5"+s.getName()+" §aна §9"+dur+" минут§a!");
 						}else if(a[0].equalsIgnoreCase("del") && a.length == 1) {
-							if(OoOoOOo_Booostoor_oOOoOooOO.agboost >= 1) {
-								OoOoOOo_Booostoor_oOOoOooOO.agboost = 0;
-								int boost = OoOoOOo_Booostoor_oOOoOooOO.agboostm;
+							if(Booostoor.agboost >= 1) {
+								Booostoor.agboost = 0;
+								int boost = Booostoor.agboostm;
 								Bukkit.broadcastMessage(MainAnimals.prefix+"§aБустер §9x"+boost+" §aпринуждённо закончен администратором §5"+s.getName()+"§a!");
-								OoOoOOo_Booostoor_oOOoOooOO.agboostm = 1;
+								Booostoor.agboostm = 1;
 							}else {
 								s.sendMessage(MainAnimals.prefix+"§cБустер и так уже закончен!");
 							}

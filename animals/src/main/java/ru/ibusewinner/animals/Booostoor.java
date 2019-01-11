@@ -5,7 +5,7 @@ import org.bukkit.entity.Player;
 
 import de.Herbystar.TTA.TTA_Methods;
 
-public class OoOoOOo_Booostoor_oOOoOooOO {
+public class Booostoor {
 	
 	//Длительность бустеров в минутах (Админский, обычный)
 	public static int agboost = 0;
