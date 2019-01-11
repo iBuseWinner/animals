@@ -1,0 +1,19 @@
+name: MavenAnimalsLive
+author: iBuseWinner
+version: 0.2.101_352
+main: ru.ibusewinner.animals.MainAnimals
+description: AnimalsLive plugin!
+
+commands:
+  choose:
+  info:
+  buy:
+  show:
+  KAd5WlBYtyUhqubXaHIwmcXb:
+  respawn:
+  alboost:
+  algive:
+  alshow:
+  leaderboard:
+  alholo:
+  levelup:
