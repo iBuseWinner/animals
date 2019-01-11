@@ -63,17 +63,17 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 				if (DonateAPI.removeGc(p.getName(), 200) == 1)
 				{
 					Booostoor b = new Booostoor();
-					b.gboost = 30;
-					b.gboostm = 2;					
-					b.agboost = 30;
-					b.agboostm = 2;
+					Booostoor.gboost = 30;
+					Booostoor.gboostm = 2;					
+					Booostoor.agboost = 30;
+					Booostoor.agboostm = 2;
 					b.timer();
 				}
 			}
 			else if(e.getSlot() == 5) 
 			{
 				if (DonateAPI.removeGc(p.getName(), 150) == 1)
-					APIAnimals.setLocalBoost(p, 2);;
+					APIAnimals.setLocalBoost(p, 2);
 			}
 			else return;
 		}
