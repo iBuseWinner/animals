@@ -107,8 +107,8 @@ public class ListenersAnimals implements Listener{
 			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§9meow §d;3");
 		}
 		
-		TTA_Methods.sendTablist(player,"\n§a§lGrendCity\n§eСервер, который вы ждали! ;3\n\n§3Онлайн на всём сервере:"+Bukkit.getOnlinePlayers().size()
-				+"\n","\n§3Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh\n§3Наш сайт: §1www.скоро.net\n§3Наш форум: §1www.forum.скоро.net");
+		TTA_Methods.sendTablist(player,"\n§a§lGrendCity\n    §eСервер, который вы ждали! ;3\n\n§3Онлайн на всём сервере: §a"+Bukkit.getOnlinePlayers().size()
+				+"\n","\n§3Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh\n§3Наш сайт: §bwww.скоро.net\n§3Наш форум: §6www.forum.скоро.net\n");
 		
 		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 			public void run() {

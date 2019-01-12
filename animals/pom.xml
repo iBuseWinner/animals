@@ -38,29 +38,23 @@
             <version>1.12.2-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
         </dependency>
-<<<<<<< HEAD
   <dependency>
     <groupId>de.Herbystar</groupId>
     <artifactId>TTA</artifactId>
     <version>4.4</version>
     <scope>provided</scope>
   </dependency>
-=======
->>>>>>> b9ee0b81c9cbf76a24b3a18767fec4e682fe4aa4
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>3.8.1</version>
       <scope>test</scope>
     </dependency>
-<<<<<<< HEAD
   <dependency>
     <groupId>LibsDisguises</groupId>
     <artifactId>LibsDisguises</artifactId>
     <version>9.5.2</version>
   </dependency>
-=======
->>>>>>> b9ee0b81c9cbf76a24b3a18767fec4e682fe4aa4
   </dependencies>
   
   <build>

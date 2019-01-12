@@ -63,18 +63,10 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 		Player p = (Player)e.getWhoClicked();
 		
 		if(e.getInventory().getName().equalsIgnoreCase(donator)) {
-<<<<<<< HEAD
 			e.setCancelled(true);
-			
-			if(e.getSlot() == 3) 
-			{
-				int rgc = APIAnimals.removeGc(p.getName(), 200);
-				
-=======
 			if(e.getSlot() == 3) 	
 			{
 				int rgc = APIAnimals.removeGc(p.getName(), 200);				
->>>>>>> b9ee0b81c9cbf76a24b3a18767fec4e682fe4aa4
 				if (rgc == 1)
 				{
 					for(Player pl : Bukkit.getOnlinePlayers()) {
@@ -95,10 +87,6 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 			}
 			else if(e.getSlot() == 5) 
 			{
-<<<<<<< HEAD
-
-=======
->>>>>>> b9ee0b81c9cbf76a24b3a18767fec4e682fe4aa4
 				int rgc = APIAnimals.removeGc(p.getName(), 150);
 				
 				if (rgc == 1)

@@ -1,6 +1,5 @@
 package ru.ibusewinner.animals;
 
-import java.util.List;
 import java.util.Map;
 
 import org.bukkit.Bukkit;

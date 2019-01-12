@@ -24,5 +24,6 @@
 	</classpathentry>
 	<classpathentry kind="lib" path="C:/Users/Хатико/Desktop/QkamiINC/Сборка/печенье ходячее/самописы/тестсерф/plugins/LibsDisguises.jar"/>
 	<classpathentry kind="lib" path="C:/Users/Хатико/Desktop/QkamiINC/Сборка/печенье ходячее/самописы/тестсерф/plugins/TTA-4.4 (1).jar"/>
+	<classpathentry kind="lib" path="C:/Users/Хатико/Desktop/QkamiINC/Сборка/печенье ходячее/самописы/тестсерф/Spigot.jar"/>
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>
