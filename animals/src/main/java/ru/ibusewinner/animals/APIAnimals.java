@@ -1110,20 +1110,7 @@ public class APIAnimals {
 
 	// returns: 1 - okay; 2 - no money; 3 - error;
 	public static int removeGc(Player p, int sum) {
-		try {
-			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET gc= ? WHERE name= ?");
-			ps.setString(2, p.getName());
-			if (getGc(p) - sum < 0)
-				return 2;
-			ps.setInt(1,getGc(p)-sum);
-			ResultSet rs = ps.executeQuery();
-			rs.close();
-			ps.close();
-			return 1;
-		}catch(Exception ex) {
-			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§cЧто-то пошло не так!");
-			return 3;
-		}
+		return removeGc(p.getName(), sum);
 	}
 	// returns: 1 - okay; 2 - no money; 3 - error; other - ???
 	public static int removeGc(String name, int sum)
