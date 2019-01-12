@@ -1097,6 +1097,7 @@ public class APIAnimals {
 			PreparedStatement ps = MySQLAnimals.getStatement("SELECT * FROM players WHERE name= ?");
 			ps.setString(1,name);
 			ResultSet rs = ps.executeQuery();
+			rs.next();
 			int gc = rs.getInt("gc");
 			rs.close();
 			ps.close();
