@@ -75,7 +75,7 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 					p.sendMessage(MainAnimals.prefix + "§aГлобальный буст x2 на 30 минут успешно куплен!");
 				}
 				else if (rgc == 2) 
-					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов. Задонатьте ещё!");
+					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов! Задонатьте ещё.");
 				else p.sendMessage(MainAnimals.prefix + "§cНеизвестная ошибка! Обратитесь к администратору.");
 			}
 			else if(e.getSlot() == 5) 
@@ -88,7 +88,7 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 					p.sendMessage(MainAnimals.prefix + "§aБуст x2 на 30 минут успешно куплен!");
 				}
 				else if (rgc == 2) 
-					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов. Задонатьте ещё!");
+					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов! Задонатьте ещё.");
 				else p.sendMessage(MainAnimals.prefix + "§cНеизвестная ошибка! Обратитесь к администратору.");
 			}
 			else
