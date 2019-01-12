@@ -16,7 +16,10 @@ public class MainAnimals extends JavaPlugin{
 	public void onEnable() {
 		plugin = this;
 		MySQLAnimals.connect();
+		APIAnimals.createTable();
 		regCmdList();
+		getServer().getPluginManager().registerEvents(new CmdDonateAnimals(), this);
+		getServer().getPluginManager().registerEvents(new ListenersAnimals(), this);
 	}
 	@Override
 	public void onDisable() {

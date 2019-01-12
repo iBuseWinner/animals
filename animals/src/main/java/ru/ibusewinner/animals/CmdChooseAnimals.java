@@ -74,42 +74,34 @@ public class CmdChooseAnimals implements CommandExecutor{
 						if(type.equalsIgnoreCase("кот")) {
 							APIAnimals.setAnimal(send,1);
 							s.sendMessage(MainAnimals.prefix+"§aВы успешно выбрали животное: §eкот");
-							send.teleport(new Location(Bukkit.getWorld("world"), 4.5, 75, -3.5));
 							DisguiseAPI.disguiseToAll(send,cat);
 						}else if(type.equalsIgnoreCase("собака")) {
 							APIAnimals.setAnimal(send,2);
 							s.sendMessage(MainAnimals.prefix+"§aВы успешно выбрали животное: §fсобака");
-							send.teleport(new Location(Bukkit.getWorld("world"), 0.5, 75, -3.5));
 							DisguiseAPI.disguiseToAll(send,dog);
 						}else if(type.equalsIgnoreCase("корова")) {
 							APIAnimals.setAnimal(send,3);
 							s.sendMessage(MainAnimals.prefix+"§aВы успешно выбрали животное: §6корова");
-							send.teleport(new Location(Bukkit.getWorld("world"), -3.5, 75, -3.5));
 							DisguiseAPI.disguiseToAll(send,cow);
 						}else if(type.equalsIgnoreCase("свинья")) {
 							APIAnimals.setAnimal(send,4);
 							s.sendMessage(MainAnimals.prefix+"§aВы успешно выбрали животное: §dсвинья");
-							send.teleport(new Location(Bukkit.getWorld("world"), -3.5, 75, -7.5));
 							DisguiseAPI.disguiseToAll(send,pig);
 						}else if(type.equalsIgnoreCase("курица")) {
 							APIAnimals.setAnimal(send,5);
 							s.sendMessage(MainAnimals.prefix+"§aВы успешно выбрали животное: §fкурица");
-							send.teleport(new Location(Bukkit.getWorld("world"), -3.5, 75, -11.5));
 							DisguiseAPI.disguiseToAll(send,chicken);
 						}else if(type.equalsIgnoreCase("медведь")) {
 							APIAnimals.setAnimal(send,7);
 							s.sendMessage(MainAnimals.prefix+"§aВы успешно выбрали животное: §fмедведь");
-							send.teleport(new Location(Bukkit.getWorld("world"), 4.5, 75, -11.5));
 							DisguiseAPI.disguiseToAll(send,bear);
 						}else if(type.equalsIgnoreCase("кролик")) {
 							APIAnimals.setAnimal(send,8);
 							s.sendMessage(MainAnimals.prefix+"§aВы успешно выбрали животное: §6кролик");
-							send.teleport(new Location(Bukkit.getWorld("world"), 4.5, 75, -7.5));
 							DisguiseAPI.disguiseToAll(send,rabbid);
 						}else if(type.equalsIgnoreCase("попугай")) {
 							APIAnimals.setAnimal(send,9);
 							s.sendMessage(MainAnimals.prefix+"§aВы успешно выбрали животное: §9попугай");
-							send.teleport(new Location(Bukkit.getWorld("world"), 0.5, 75, -7.5));
 							DisguiseAPI.disguiseToAll(send,parrot);
 						}else {
 							s.sendMessage(MainAnimals.prefix+"§cВы не написали тип животного! Доступные типы:");

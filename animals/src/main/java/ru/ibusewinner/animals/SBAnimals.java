@@ -124,7 +124,7 @@ public class SBAnimals implements Listener{
 				Score score16 = objective.getScore("§3");
 				score16.setScore(2);
 				
-				Score score19 = objective.getScore("§9§lvk.com/ibusewinner");
+				Score score19 = objective.getScore("§9§lvk.com/muravchik_as");
 				score19.setScore(1);
 				
 				player.setScoreboard(board);
