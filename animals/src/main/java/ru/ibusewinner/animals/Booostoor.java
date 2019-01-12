@@ -14,12 +14,12 @@ public class Booostoor {
 	
 	public static int agboostm = 1;
 	public static int gboostm = 1;
+	private int timer = 0;
 	
 	public static String booster = " ";
-	private int taskId = 0;
+	public int taskId = 0;
 	@SuppressWarnings("deprecation")
 	public void timer() {
-		
 		taskId = Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 			
 			@Override
@@ -31,8 +31,9 @@ public class Booostoor {
 						Bukkit.getScheduler().cancelTask(taskId);
 					}
 				}else {
-					agboost--;
-					TTA_Methods.setBarTitle("§aГлобальный бустер §9x"+agboostm+" §aот админа §5"+booster+" §6("+agboost+"минут)");
+					TTA_Methods.setBarTitle("§aГлобальный бустер §9x"+agboostm+" §aот игрока §5"+booster+" §6("+agboost+"минут)");
+					if (timer % 60 == 0)
+						agboost--;
 				}
 				
 				if(gboost <= 0) {
@@ -44,8 +45,9 @@ public class Booostoor {
 					gboost--;
 					TTA_Methods.setBarTitle("§aГлобальный бустер §9x"+agboostm+" §aот игрока §5"+booster+" §6("+agboost+"минут)");
 				}
+				timer++;
 			} 
-		},0,20*60);
+		},0,20);
 	}
 	
 }

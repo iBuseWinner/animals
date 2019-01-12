@@ -101,7 +101,7 @@ public class ListenersAnimals implements Listener{
 			DisguiseAPI.disguiseToAll(player,parrot);
 		}
 		try {
-			CmdShowLBAnimals.holo.displayHolo(player);
+			HologramAPI.displayHolos(player);
 		}catch(Exception ex) {
 			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§9meow §d;3");
 		}

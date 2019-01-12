@@ -34,6 +34,7 @@ public class CmdGiveGcAnimals implements CommandExecutor{
 								String name = a[1];
 								int count = APIAnimals.getGc(name);
 								s.sendMessage(MainAnimals.prefix+"§aИгрок §1"+name+"§a имеет §9"+count+"гк§a!");
+								s.sendMessage(name);
 							}catch(Exception ex) {
 								s.sendMessage(MainAnimals.prefix+"§cИгрок не найден!");
 							}

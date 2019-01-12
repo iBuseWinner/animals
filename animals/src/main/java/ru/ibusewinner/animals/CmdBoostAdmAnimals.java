@@ -42,6 +42,9 @@ public class CmdBoostAdmAnimals implements CommandExecutor{
 								Booostoor.agboost = 0;
 								int boost = Booostoor.agboostm;
 								Bukkit.broadcastMessage(MainAnimals.prefix+"§aБустер §9x"+boost+" §aпринуждённо закончен администратором §5"+s.getName()+"§a!");
+								for (Player p : Bukkit.getOnlinePlayers()) {								
+									TTA_Methods.removeBossBar(p);
+								}
 								Booostoor.agboostm = 1;
 							}else {
 								s.sendMessage(MainAnimals.prefix+"§cБустер и так уже закончен!");

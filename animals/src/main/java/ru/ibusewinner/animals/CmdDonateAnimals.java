@@ -3,6 +3,9 @@ package ru.ibusewinner.animals;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarFlag;
+import org.bukkit.boss.BarStyle;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -13,6 +16,9 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import de.Herbystar.TTA.TTA_Methods;
+
 
 public class CmdDonateAnimals implements CommandExecutor, Listener{
 	
@@ -55,22 +61,22 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 	@EventHandler
 	public void onClick(InventoryClickEvent e) {
 		Player p = (Player)e.getWhoClicked();
-
-		e.setCancelled(true);
+		
 		if(e.getInventory().getName().equalsIgnoreCase(donator)) {
-			e.setCancelled(true);
-			if(e.getSlot() == 3) 
+			if(e.getSlot() == 3) 	
 			{
-				int rgc = APIAnimals.removeGc(p.getName(), 200);
-				
+				int rgc = APIAnimals.removeGc(p.getName(), 200);				
 				if (rgc == 1)
 				{
-					
+					for(Player pl : Bukkit.getOnlinePlayers()) {
+					TTA_Methods.createBossBar(pl,"§aГлобальный бустер §9x"+2+" §aот админа §5"+p.getName()+" §6("+30+"минут)",1.0,BarStyle.SOLID,BarColor.YELLOW,BarFlag.CREATE_FOG,true);
+				}
 					Booostoor b = new Booostoor();
 					Booostoor.gboost = 30;
 					Booostoor.gboostm = 2;					
 					Booostoor.agboost = 30;
 					Booostoor.agboostm = 2;
+					Booostoor.booster = p.getName();
 					b.timer();
 					p.sendMessage(MainAnimals.prefix + "§aГлобальный буст x2 на 30 минут успешно куплен!");
 				}

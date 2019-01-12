@@ -40,7 +40,7 @@ public class CmdShowLBAnimals implements CommandExecutor{
 						if(a[0].equalsIgnoreCase("create")) {
 							holo.createHolo(loc, lines);
 							for(Player p : Bukkit.getOnlinePlayers()) {
-								holo.displayHolo(p);
+								holo.displayHolo(p);	
 							}
 						}else if(a[0].equalsIgnoreCase("delete")) {
 							for(Player p : Bukkit.getOnlinePlayers()) {
