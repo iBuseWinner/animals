@@ -11,6 +11,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import de.Herbystar.TTA.TTA_Methods;
 import me.libraryaddict.disguise.DisguiseAPI;
@@ -71,34 +72,34 @@ public class ListenersAnimals implements Listener{
 		parrotw.setCustomName(player.getName());
 		parrotw.setCustomNameVisible(true);
 		if(APIAnimals.getAnimal(player) == 0) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.undisguiseToAll(player);
 		}else if(APIAnimals.getAnimal(player) == 1) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,cat);
 		}else if(APIAnimals.getAnimal(player) == 2) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,dog);
 		}else if(APIAnimals.getAnimal(player) == 3) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,cow);
 		}else if(APIAnimals.getAnimal(player) == 4) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,pig);
 		}else if(APIAnimals.getAnimal(player) == 5) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,chicken);
 		}else if(APIAnimals.getAnimal(player) == 6) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,sheep);
 		}else if(APIAnimals.getAnimal(player) == 7) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,bear);
 		}else if(APIAnimals.getAnimal(player) == 8) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,rabbid);
 		}else if(APIAnimals.getAnimal(player) == 9) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,parrot);
 		}
 		try {
@@ -154,7 +155,7 @@ public class ListenersAnimals implements Listener{
 		}
 		
 		if(player.getLocation().getY() <= 80) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			player.sendMessage(MainAnimals.prefix+"§aНе падай, хе-хе))");
 			player.setHealth(20.0);
 		}
@@ -187,5 +188,9 @@ public class ListenersAnimals implements Listener{
 		}catch(Exception ex) {
 			
 		}
+	}
+	@EventHandler
+	public void onQuit(PlayerQuitEvent e) {
+		e.setQuitMessage("");
 	}
 }
