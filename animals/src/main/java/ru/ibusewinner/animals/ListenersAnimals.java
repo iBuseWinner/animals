@@ -154,7 +154,7 @@ public class ListenersAnimals implements Listener{
 			player.sendMessage(MainAnimals.prefix+"§cПропишите §9/choose §cи выберите своего животного!");
 		}
 		
-		if(player.getLocation().getY() <= 80) {
+		if(player.getLocation().getY() <= 86) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			player.sendMessage(MainAnimals.prefix+"§aНе падай, хе-хе))");
 			player.setHealth(20.0);

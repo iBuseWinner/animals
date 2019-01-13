@@ -37,6 +37,7 @@ public class MainAnimals extends JavaPlugin{
 		Bukkit.getPluginManager().registerEvents(new ListenersAnimals(),this);
 		Bukkit.getPluginManager().registerEvents(new SBAnimals(),this);
 		Bukkit.getPluginManager().registerEvents(new CmdDonateAnimals(),this);
+		Bukkit.getPluginManager().registerEvents(new disableEverythink(),this);
 		Bukkit.getPluginCommand("choose").setExecutor(new CmdChooseAnimals());
 		Bukkit.getPluginCommand("alboost").setExecutor(new CmdBoostAdmAnimals());
 		Bukkit.getPluginCommand("info").setExecutor(new CmdInfoAnimals());
