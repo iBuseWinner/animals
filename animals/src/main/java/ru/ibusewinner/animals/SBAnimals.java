@@ -135,7 +135,7 @@ public class SBAnimals implements Listener{
 				score16.setScore(1);
 				
 				Score score19 = objective.getScore("§aОнлайн: §a§l " + Bukkit.getOnlinePlayers().size());
-				score19.setScore(0);
+				score19.setScore(-1);
 				
 				
 				

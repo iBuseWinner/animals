@@ -13,6 +13,7 @@ import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
 
+import de.Herbystar.TTA.TTA_Methods;
 import me.libraryaddict.disguise.DisguiseAPI;
 import me.libraryaddict.disguise.disguisetypes.AnimalColor;
 import me.libraryaddict.disguise.disguisetypes.DisguiseType;
@@ -107,6 +108,9 @@ public class ListenersAnimals implements Listener{
 			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§9meow §d;3");
 		}
 		
+		TTA_Methods.sendTablist(player,"\n§a§lGrendCity\n    §eСервер, который вы ждали! ;3\n\n§3Онлайн на всём сервере: §a"+Bukkit.getOnlinePlayers().size()
+				+"\n","\n§3Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh\n§3Наш сайт: §bwww.скоро.net\n§3Наш форум: §6www.forum.скоро.net\n");
+		
 		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 			public void run() {
 				for(Player pl : Bukkit.getOnlinePlayers()) {
@@ -159,7 +163,7 @@ public class ListenersAnimals implements Listener{
 			player.sendMessage(MainAnimals.prefix+"§cПропишите §9/choose §cи выберите своего животного!");
 		}
 		
-		if(player.getLocation().getY() <= -10) {
+		if(player.getLocation().getY() <= 80) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
 			player.sendMessage(MainAnimals.prefix+"§aНе падай, хе-хе))");
 			player.setHealth(20.0);
