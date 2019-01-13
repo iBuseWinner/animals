@@ -1,44 +1,68 @@
 package ru.ibusewinner.animals;
 
-import java.util.List;
-
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 public class LocalBoost 
 {
-	public static List<LocalBoost> boosters;
 	private Player player;
 	public int boostTimer = 0;
 	public int currentTime = 0;
 	public int booster = 1;
-	public boolean stopTimer = false;
-	public int timer;
+	public boolean boosted = false;
+	public int timer = 0;
 	
-	public LocalBoost(Player player) 
+	public LocalBoost(Player player)
+	{
+		this.player = player;
+		init();
+		MainAnimals.boosters.put(player, this);
+		if (MainAnimals.boosters.get(this.player).isBoosted())
+		{
+			MainAnimals.boosters.get(this.player).start();
+		}
+		else
+		{
+			if (MainAnimals.boosters.get(this.player).timer != 0) MainAnimals.boosters.get(this.player).stop();
+			MainAnimals.boosters.get(this.player).delete();
+		}
+	}
+	
+
+	public LocalBoost(Player player, int booster, int boostTimer)
 	{
 		this.player = player;
 		init();
 
-		if ((boostTimer <= currentTime && (boostTimer > 0 && currentTime > 0)) || (boostTimer == 0 || currentTime == 0))
-		{
-			delete();
-		}
-		else start();
+		if (!isBoosted()) currentTime = 0;
+		set(booster, boostTimer);
+		if (!MainAnimals.boosters.containsKey(player))
+			MainAnimals.boosters.put(player, this);
+		MainAnimals.boosters.get(this.player).start();
 	}
 	private void init()
 	{
 		boostTimer = APIAnimals.getBoostTime(player);
-		currentTime = APIAnimals.getBoostTime(player);
+		currentTime = APIAnimals.getCurrentTime(player);
 		booster = APIAnimals.getLocalBoost(player);
+		boosted = isBoosted();
 	}
 	public void delete()
 	{
 		boostTimer = 0;
 		currentTime = 0;
 		booster = 1;
+		boosted = false;		
+		stop();
 		sendDb();
+		MainAnimals.boosters.remove(player);
 		
+	}
+	public void set(int booster, int timer) // Время в минутах. В бд оно в секунды переводится
+	{
+		this.boostTimer = this.boostTimer+timer*60; // Здесь как раз перевод времени в секунды 
+		this.booster = booster;
+		sendDb();
 	}
 	public void sendDb()
 	{
@@ -46,9 +70,12 @@ public class LocalBoost
 		APIAnimals.setCurrentTime(player, currentTime);
 		APIAnimals.setLocalBoost(player, booster);
 	}
+	@SuppressWarnings("deprecation")
 	public void start()
 	{
-		timer = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(MainAnimals.plugin, new Runnable() {
+		boosted = true;
+		timer = Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin, new Runnable()
+		{
 			
 			@Override
 			public void run() 
@@ -57,14 +84,26 @@ public class LocalBoost
 				if (currentTime >= boostTimer)
 				{
 					delete();
-					stopTimer = true;
+					boosted = false;
 				}
-				if (currentTime == 0 && boostTimer == 0 || (currentTime == 0 || boostTimer == 0))
-					stopTimer = true;
-				if (stopTimer)
-					Bukkit.getServer().getScheduler().cancelTask(timer);
+				else if (currentTime == 0 && boostTimer == 0 || (currentTime == 0 || boostTimer == 0))
+					boosted = false;
+				
+				if (!boosted)
+				{
+					delete();
+				}
 			}
 		}, 0, 20);
+	}
+	
+	public boolean isBoosted() 
+	{
+		return booster > 1 && currentTime < boostTimer;
+	}
+	public void stop()
+	{
+		Bukkit.getServer().getScheduler().cancelTask(timer);
 	}
 	
 }

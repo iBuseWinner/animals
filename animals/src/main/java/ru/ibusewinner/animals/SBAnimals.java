@@ -121,11 +121,23 @@ public class SBAnimals implements Listener{
 				Score score15 = objective.getScore("§aБустер: §3x"+String.valueOf(boost));
 				score15.setScore(3);
 				
-				Score score16 = objective.getScore("§3");
-				score16.setScore(2);
+				int currentTime = MainAnimals.boosters.get(player).currentTime;
+				int boostTimer = MainAnimals.boosters.get(player).boostTimer;
+				int difference = boostTimer - currentTime;
+				int m = difference / 60;
 				
-				Score score19 = objective.getScore("§9§lvk.com/muravchik_as");
-				score19.setScore(1);
+				int h = m / 60;
+				m = m - h*60 + 1;
+				Score score20 = objective.getScore("§aДо окончания буста: §c" + (int)h +  "§f:§c" + m);
+				score20.setScore(2);
+				
+				Score score16 = objective.getScore("§3");
+				score16.setScore(1);
+				
+				Score score19 = objective.getScore("§aОнлайн: §a§l " + Bukkit.getOnlinePlayers().size());
+				score19.setScore(0);
+				
+				
 				
 				player.setScoreboard(board);
 			}

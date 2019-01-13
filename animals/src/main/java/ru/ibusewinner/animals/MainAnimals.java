@@ -1,5 +1,8 @@
 package ru.ibusewinner.animals;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -11,6 +14,7 @@ public class MainAnimals extends JavaPlugin{
 	
 	public static String prefix = "§e§lЖизнь Животных§8 >>§7 ";
 	static Plugin plugin;
+	public static Map<Player, LocalBoost> boosters = new HashMap<Player, LocalBoost>();
 	
 	@Override
 	public void onEnable() {
@@ -18,11 +22,13 @@ public class MainAnimals extends JavaPlugin{
 		MySQLAnimals.connect();
 		APIAnimals.createTable();
 		regCmdList();
-		getServer().getPluginManager().registerEvents(new CmdDonateAnimals(), this);
-		getServer().getPluginManager().registerEvents(new ListenersAnimals(), this);
 	}
 	@Override
 	public void onDisable() {
+		for (LocalBoost lb : MainAnimals.boosters.values()) {
+			lb.sendDb();
+			lb.delete();
+		}
 		MySQLAnimals.disconnect();
 		try {
 			for(Player pl : Bukkit.getOnlinePlayers()) {
@@ -38,6 +44,7 @@ public class MainAnimals extends JavaPlugin{
 	public void regCmdList() {
 		Bukkit.getPluginManager().registerEvents(new ListenersAnimals(),this);
 		Bukkit.getPluginManager().registerEvents(new SBAnimals(),this);
+		Bukkit.getPluginManager().registerEvents(new CmdDonateAnimals(), this);
 		Bukkit.getPluginCommand("choose").setExecutor(new CmdChooseAnimals());
 		Bukkit.getPluginCommand("alboost").setExecutor(new CmdBoostAdmAnimals());
 		Bukkit.getPluginCommand("info").setExecutor(new CmdInfoAnimals());

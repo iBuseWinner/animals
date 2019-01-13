@@ -11,6 +11,7 @@ import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 
 import me.libraryaddict.disguise.DisguiseAPI;
 import me.libraryaddict.disguise.disguisetypes.AnimalColor;
@@ -141,6 +142,15 @@ public class ListenersAnimals implements Listener{
 				}
 			}
 		},0,20*2);
+		
+		LocalBoost lb = new LocalBoost(player);
+	}
+	
+	@EventHandler
+	public void onPlayerQuit(PlayerQuitEvent e)
+	{
+		MainAnimals.boosters.get(e.getPlayer()).sendDb();
+		MainAnimals.boosters.remove(e.getPlayer());
 	}
 	@EventHandler
 	public void onMove(PlayerMoveEvent event) {
@@ -149,7 +159,7 @@ public class ListenersAnimals implements Listener{
 			player.sendMessage(MainAnimals.prefix+"§cПропишите §9/choose §cи выберите своего животного!");
 		}
 		
-		if(player.getLocation().getY() == 50) {
+		if(player.getLocation().getY() <= -10) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
 			player.sendMessage(MainAnimals.prefix+"§aНе падай, хе-хе))");
 			player.setHealth(20.0);

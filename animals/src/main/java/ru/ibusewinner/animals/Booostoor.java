@@ -19,29 +19,40 @@ public class Booostoor {
 	public static String booster = " ";
 	public int taskId = 0;
 	@SuppressWarnings("deprecation")
-	public void timer() {
-		taskId = Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
+	public void timer() 
+	{
+		taskId = Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() 
+		{
 			
 			@Override
-			public void run() {
+			public void run() 
+			{
 				
-				if(agboost <= 0){
-					for(Player pl : Bukkit.getOnlinePlayers()) {
+				if(agboost <= 0)
+				{
+					for(Player pl : Bukkit.getOnlinePlayers()) 
+					{
 						TTA_Methods.removeBossBar(pl);
 						Bukkit.getScheduler().cancelTask(taskId);
 					}
-				}else {
+				}
+				else 
+				{
 					TTA_Methods.setBarTitle("§aГлобальный бустер §9x"+agboostm+" §aот игрока §5"+booster+" §6("+agboost+"минут)");
 					if (timer % 60 == 0)
 						agboost--;
 				}
 				
-				if(gboost <= 0) {
-					for(Player pl : Bukkit.getOnlinePlayers()) {
+				if(gboost <= 0) 
+				{
+					for(Player pl : Bukkit.getOnlinePlayers()) 
+					{
 						TTA_Methods.removeBossBar(pl);
 						Bukkit.getScheduler().cancelTask(taskId);
 					}
-				}else {
+				}
+				else
+				{
 					gboost--;
 					TTA_Methods.setBarTitle("§aГлобальный бустер §9x"+agboostm+" §aот игрока §5"+booster+" §6("+agboost+"минут)");
 				}

@@ -324,7 +324,7 @@ public class APIAnimals {
 	public static void setLocalBoost(Player p, int boost) {
 		try{
 			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET localboost= ? WHERE uuid= ?");
-			ps.setInt(1,getLocalBoost(p)*boost);
+			ps.setInt(1,boost);
 			ps.setString(2,p.getUniqueId().toString());
 			ps.executeUpdate();
 			ps.close();
