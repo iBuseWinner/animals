@@ -8,7 +8,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -18,7 +17,6 @@ import org.bukkit.scoreboard.Team;
 import org.bukkit.scoreboard.Team.Option;
 import org.bukkit.scoreboard.Team.OptionStatus;
 
-import de.Herbystar.TTA.TTA_Methods;
 import me.libraryaddict.disguise.DisguiseAPI;
 import me.libraryaddict.disguise.disguisetypes.AnimalColor;
 import me.libraryaddict.disguise.disguisetypes.DisguiseType;
@@ -121,9 +119,6 @@ public class ListenersAnimals implements Listener{
 		}catch(Exception ex) {
 			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§9meow §d;3");
 		}
-		
-		TTA_Methods.sendTablist(player,"\n§a§lGrendCity\n    §eСервер, который вы ждали! ;3\n\n§3Онлайн на всём сервере: §a"+Bukkit.getOnlinePlayers().size()
-				+"\n","\n§3Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh\n§3Наш сайт: §bwww.скоро.net\n§3Наш форум: §6www.forum.скоро.net\n");
 		
 		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 			public void run() {
