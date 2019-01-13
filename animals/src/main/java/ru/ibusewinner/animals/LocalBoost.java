@@ -12,6 +12,17 @@ public class LocalBoost
 	public boolean boosted = false;
 	public int timer = 0;
 	
+	/*
+	 * Использование
+	 * 
+	 * 	Для добавления нового/продления старого бустера" 
+			MainAnimals.boosters.remove(p);
+			LocalBoost lb = new LocalBoost(p, 2, 30);
+			
+		Для установки бустера игроку из бд (Для продолжения таймера после перезахода):
+			LocalBoost lb = new LocalBoost(player);
+	 */
+	
 	public LocalBoost(Player player)
 	{
 		this.player = player;
