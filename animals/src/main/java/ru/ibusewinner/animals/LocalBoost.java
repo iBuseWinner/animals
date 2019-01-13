@@ -32,8 +32,12 @@ public class LocalBoost
 	public LocalBoost(Player player, int booster, int boostTimer)
 	{
 		this.player = player;
+		for (LocalBoost lb: MainAnimals.boosters.values())
+		{
+			lb.sendDb();
+		}
 		init();
-
+		
 		if (!isBoosted()) currentTime = 0;
 		set(booster, boostTimer);
 		if (!MainAnimals.boosters.containsKey(player))
