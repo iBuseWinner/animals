@@ -84,6 +84,7 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 				
 				if (rgc == 1)
 				{
+					MainAnimals.boosters.remove(p);
 					LocalBoost boost = new LocalBoost(p, 2, 30);
 					p.sendMessage(MainAnimals.prefix + "§aБуст §cx2 §aуспешно куплен/продлён на §c30 минут §aза §c150 грендкоинов!");
 				}

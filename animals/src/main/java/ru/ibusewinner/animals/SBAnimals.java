@@ -126,11 +126,10 @@ public class SBAnimals implements Listener{
 					int currentTime = MainAnimals.boosters.get(player).currentTime;
 					int boostTimer = MainAnimals.boosters.get(player).boostTimer;
 					int difference = boostTimer - currentTime;
-					m = difference / 60;
+					m = difference / 60 + 1;
 					
 					h = m / 60;
-					m = m - h*60 + 1;
-
+					m = m - h*60;
 					score15 = objective.getScore("§aБустер: §3x"+String.valueOf(boost) + " §7на §3" + h + ":" + m);
 				}
 				score15.setScore(3);

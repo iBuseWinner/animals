@@ -162,8 +162,8 @@ public class ListenersAnimals implements Listener{
 		},0,20*2);
 
 		LocalBoost lb = new LocalBoost(player);
-
-		noPushScoreboard.registerNewTeam("noPush")
+		
+		noPushTeam.addPlayer(player);
 		player.setScoreboard(noPushScoreboard);
 	}
 	
@@ -184,8 +184,14 @@ public class ListenersAnimals implements Listener{
 //	}
 	public static void noPush()
 	{
-		noPushScoreboard=  Bukkit.getScoreboardManager().getMainScoreboard()
-//		noPushTeam = noPushScoreboard.registerNewTeam("NoPush");
+		noPushScoreboard=  Bukkit.getScoreboardManager().getMainScoreboard();
+		try{
+			noPushTeam = noPushScoreboard.registerNewTeam("NoPush");
+		}catch(Exception e)
+		{
+			noPushTeam = noPushScoreboard.getTeam("NoPush");
+		}
+		noPushTeam.setOption(Option.COLLISION_RULE, OptionStatus.NEVER);
 	}
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent e)
