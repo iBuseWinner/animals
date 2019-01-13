@@ -62,7 +62,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aКолодец§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Бабушка§8: §7Ой, милок, маловато у тебя денюжек, подкопи ещё, а потом приходи.");
 								}
 							}else if(APIAnimals.getBizKol(send) == 1) {
 								if(APIAnimals.getBal(send) >= 600) {
@@ -75,7 +75,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aКолодец§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Бабушка§8: §7Ой, милок, маловато у тебя денюжек, подкопи ещё, а потом приходи.");
 								}
 							}else if(APIAnimals.getBizKol(send) == 2) {
 								if(APIAnimals.getBal(send) >= 900) {
@@ -88,7 +88,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aКолодец§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Бабушка§8: §7Ой, милок, маловато у тебя денюжек, подкопи ещё, а потом приходи.");
 								}
 							}else if(APIAnimals.getBizKol(send) == 3) {
 								if(APIAnimals.getBal(send) >= 1200) {
@@ -101,7 +101,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aКолодец§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Бабушка§8: §7Ой, милок, маловато у тебя денюжек, подкопи ещё, а потом приходи.");
 								}
 							}else if(APIAnimals.getBizKol(send) == 4) {
 								if(APIAnimals.getBal(send) >= 1500) {
@@ -114,7 +114,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aКолодец§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Бабушка§8: §7Ой, милок, маловато у тебя денюжек, подкопи ещё, а потом приходи.");
 								}
 							}else if(APIAnimals.getBizKol(send) == 5) {
 								s.sendMessage(MainAnimals.prefix+"§aВы купили максимальное количество данного бизнеса!");
@@ -131,7 +131,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aФерма§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Фермер§8: §7Ээээ, ишь чего захотел! Вот когда накопишь больше денег, тогда и возвращайся");
 								}
 							}else if(APIAnimals.getBizFarm(send) == 1) {
 								if(APIAnimals.getBal(send) >= 20000) {
@@ -144,7 +144,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aФерма§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Фермер§8: §7Ээээ, ишь чего захотел! Вот когда накопишь больше денег, тогда и возвращайся");
 								}
 							}else if(APIAnimals.getBizFarm(send) == 2) {
 								if(APIAnimals.getBal(send) >= 30000) {
@@ -157,7 +157,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aФерма§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Фермер§8: §7Ээээ, ишь чего захотел! Вот когда накопишь больше денег, тогда и возвращайся");
 								}
 							}else if(APIAnimals.getBizFarm(send) == 3) {
 								if(APIAnimals.getBal(send) >= 40000) {
@@ -170,7 +170,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aФерма§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Фермер§8: §7Ээээ, ишь чего захотел! Вот когда накопишь больше денег, тогда и возвращайся");
 								}
 							}else if(APIAnimals.getBizFarm(send) == 4) {
 								if(APIAnimals.getBal(send) >= 50000) {
@@ -183,7 +183,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aФерма§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Фермер§8: §7Ээээ, ишь чего захотел! Вот когда накопишь больше денег, тогда и возвращайся");
 								}
 							}else if(APIAnimals.getBizFarm(send) == 5) {
 								s.sendMessage(MainAnimals.prefix+"§aВы купили максимальное количество данного бизнеса!");
@@ -200,7 +200,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aДеревенский Приют§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Работник приюта§8: §7Кыш отсюда, а то к себе в приют заберу!");
 								}
 							}else if(APIAnimals.getBizDerPri(send) == 1) {
 								if(APIAnimals.getBal(send) >= 200000) {
@@ -213,7 +213,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aДеревенский Приют§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Работник приюта§8: §7Кыш отсюда, а то к себе в приют заберу!");
 								}
 							}else if(APIAnimals.getBizDerPri(send) == 2) {
 								if(APIAnimals.getBal(send) >= 300000) {
@@ -226,7 +226,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aДеревенский Приют§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Работник приюта§8: §7Кыш отсюда, а то к себе в приют заберу!");
 								}
 							}else if(APIAnimals.getBizDerPri(send) == 3) {
 								if(APIAnimals.getBal(send) >= 400000) {
@@ -239,7 +239,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aДеревенский Приют§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Работник приюта§8: §7Кыш отсюда, а то к себе в приют заберу!");
 								}
 							}else if(APIAnimals.getBizDerPri(send) == 4) {
 								if(APIAnimals.getBal(send) >= 500000) {
@@ -252,7 +252,7 @@ public class CmdsAnimals implements CommandExecutor{
 									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aДеревенский Приют§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
-									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
+									s.sendMessage("§7Работник приюта§8: §7Кыш отсюда, а то к себе в приют заберу!");
 								}
 							}else if(APIAnimals.getBizDerPri(send) == 5) {
 								s.sendMessage(MainAnimals.prefix+"§aВы купили максимальное количество данного бизнеса!");
@@ -335,7 +335,7 @@ public class CmdsAnimals implements CommandExecutor{
 									APIAnimals.addBizCirc(send);
 									APIAnimals.addHearts(send,100);
 									
-									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aЦирк§b!");
+									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aВоздушный шар§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
 									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
@@ -348,7 +348,7 @@ public class CmdsAnimals implements CommandExecutor{
 									APIAnimals.addBizCirc(send);
 									APIAnimals.addHearts(send,100);
 									
-									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aЦирк§b!");
+									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aВоздушный шар§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
 									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
@@ -361,7 +361,7 @@ public class CmdsAnimals implements CommandExecutor{
 									APIAnimals.addBizCirc(send);
 									APIAnimals.addHearts(send,100);
 									
-									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aЦирк§b!");
+									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aВоздушный шар§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
 									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
@@ -374,7 +374,7 @@ public class CmdsAnimals implements CommandExecutor{
 									APIAnimals.addBizCirc(send);
 									APIAnimals.addHearts(send,100);
 									
-									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aЦирк§b!");
+									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aВоздушный шар§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
 									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");
@@ -387,7 +387,7 @@ public class CmdsAnimals implements CommandExecutor{
 									APIAnimals.addBizCirc(send);
 									APIAnimals.addHearts(send,100);
 									
-									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aЦирк§b!");
+									s.sendMessage(MainAnimals.prefix+"§bВы успешно купили бизнес §aВоздушный шар§b!");
 									s.sendMessage(MainAnimals.prefix+"§dВаш новый доход: §c"+APIAnimals.getIncome(send));
 								}else {
 									s.sendMessage(MainAnimals.prefix+"§cНедостаточно средств для покупки данного бизнеса!");

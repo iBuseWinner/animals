@@ -86,34 +86,34 @@ public class ListenersAnimals implements Listener{
 		parrotw.setCustomName(player.getName());
 		parrotw.setCustomNameVisible(true);
 		if(APIAnimals.getAnimal(player) == 0) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.undisguiseToAll(player);
 		}else if(APIAnimals.getAnimal(player) == 1) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,cat);
 		}else if(APIAnimals.getAnimal(player) == 2) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,dog);
 		}else if(APIAnimals.getAnimal(player) == 3) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,cow);
 		}else if(APIAnimals.getAnimal(player) == 4) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,pig);
 		}else if(APIAnimals.getAnimal(player) == 5) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,chicken);
 		}else if(APIAnimals.getAnimal(player) == 6) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,sheep);
 		}else if(APIAnimals.getAnimal(player) == 7) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,bear);
 		}else if(APIAnimals.getAnimal(player) == 8) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,rabbid);
 		}else if(APIAnimals.getAnimal(player) == 9) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.disguiseToAll(player,parrot);
 		}
 		try {
@@ -209,8 +209,8 @@ public class ListenersAnimals implements Listener{
 			player.sendMessage(MainAnimals.prefix+"§cПропишите §9/choose §cи выберите своего животного!");
 		}
 		
-		if(player.getLocation().getY() <= 0) {
-			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
+		if(player.getLocation().getY() <= 86) {
+			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			player.sendMessage(MainAnimals.prefix+"§aНе падай, хе-хе))");
 			player.setHealth(20.0);
 		}
@@ -245,5 +245,8 @@ public class ListenersAnimals implements Listener{
 			ex.printStackTrace();
 		}
 	}
-	
+	@EventHandler
+	public void onQuit(PlayerQuitEvent e) {
+		e.setQuitMessage("");
+	}
 }

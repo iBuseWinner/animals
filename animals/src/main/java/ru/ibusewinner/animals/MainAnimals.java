@@ -44,7 +44,8 @@ public class MainAnimals extends JavaPlugin{
 	public void regCmdList() {
 		Bukkit.getPluginManager().registerEvents(new ListenersAnimals(),this);
 		Bukkit.getPluginManager().registerEvents(new SBAnimals(),this);
-		Bukkit.getPluginManager().registerEvents(new CmdDonateAnimals(), this);
+		Bukkit.getPluginManager().registerEvents(new CmdDonateAnimals(),this);
+		Bukkit.getPluginManager().registerEvents(new disableEverythink(),this);
 		Bukkit.getPluginCommand("choose").setExecutor(new CmdChooseAnimals());
 		Bukkit.getPluginCommand("alboost").setExecutor(new CmdBoostAdmAnimals());
 		Bukkit.getPluginCommand("info").setExecutor(new CmdInfoAnimals());
@@ -57,5 +58,8 @@ public class MainAnimals extends JavaPlugin{
 		Bukkit.getPluginCommand("algc").setExecutor(new CmdGiveGcAnimals());
 		Bukkit.getPluginCommand("donate").setExecutor(new CmdDonateAnimals());
 		Bukkit.getPluginCommand("levelup").setExecutor(new CmdLevelUp());
+		
+		PiarGC pgc = new PiarGC();
+		pgc.time();
 	}
 }
