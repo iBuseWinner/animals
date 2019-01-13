@@ -8,7 +8,7 @@ public class PiarGC {
 	private String VK = "§7[§c!§7]§3 Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh";
 	private String site = "§7[§c!§7]§3 Наш сайт: §dww.скоро.net";
 	private String forum = "§7[§c!§7]§3 Наш форум: §awww.forum.скоро.net";
-	private String discord = "§7[§c!§7]§3 Наш дискорд: §9https://discord.gg/95axsXS";
+	private String discord = "§7[§c!§7]§3 Наш дискорд: §9https://discord.gg/DDTDFgD";
 	private String donate = "§7[§c!§7]§3 Поддержать наш проект можно по ссылке: §bwww.скоро.net/cabinet";
 	
 	@SuppressWarnings("deprecation")
