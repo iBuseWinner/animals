@@ -8,10 +8,15 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.scoreboard.Scoreboard;
+import org.bukkit.scoreboard.Team;
+import org.bukkit.scoreboard.Team.Option;
+import org.bukkit.scoreboard.Team.OptionStatus;
 
 import de.Herbystar.TTA.TTA_Methods;
 import me.libraryaddict.disguise.DisguiseAPI;
@@ -22,6 +27,15 @@ import me.libraryaddict.disguise.disguisetypes.MobDisguise;
 import me.libraryaddict.disguise.disguisetypes.watchers.OcelotWatcher;
 import me.libraryaddict.disguise.disguisetypes.watchers.SheepWatcher;
 public class ListenersAnimals implements Listener{
+
+	public static Scoreboard noPushScoreboard;
+	public static Team noPushTeam;
+	
+	public ListenersAnimals() 
+	{
+		noPush();
+	}
+	
 	@SuppressWarnings("deprecation")
 	@EventHandler
 	public void onJoin(PlayerJoinEvent event) {
@@ -146,15 +160,41 @@ public class ListenersAnimals implements Listener{
 				}
 			}
 		},0,20*2);
-		
+
 		LocalBoost lb = new LocalBoost(player);
+
+		noPushScoreboard.registerNewTeam("noPush")
+		player.setScoreboard(noPushScoreboard);
 	}
 	
+//	@EventHandler
+//	public void onMobSpawn(EntitySpawnEvent e)
+//	{
+//		
+//		EntityType type = e.getEntityType();
+//		if ( 	type == EntityType.OCELOT ||
+//				type == EntityType.WOLF ||
+//				type == EntityType.POLAR_BEAR ||
+//				type == EntityType.PARROT ||
+//				type == EntityType.RABBIT ||
+//				type == EntityType.COW ||
+//				type == EntityType.PIG ||
+//				type == EntityType.CHICKEN
+//				) ;
+//	}
+	public static void noPush()
+	{
+		noPushScoreboard=  Bukkit.getScoreboardManager().getMainScoreboard()
+//		noPushTeam = noPushScoreboard.registerNewTeam("NoPush");
+	}
 	@EventHandler
 	public void onPlayerQuit(PlayerQuitEvent e)
 	{
-		MainAnimals.boosters.get(e.getPlayer()).sendDb();
-		MainAnimals.boosters.remove(e.getPlayer());
+		if (MainAnimals.boosters.containsKey(e.getPlayer()))
+		{
+			MainAnimals.boosters.get(e.getPlayer()).sendDb();
+			MainAnimals.boosters.remove(e.getPlayer());
+		}
 	}
 	@EventHandler
 	public void onMove(PlayerMoveEvent event) {
@@ -163,7 +203,7 @@ public class ListenersAnimals implements Listener{
 			player.sendMessage(MainAnimals.prefix+"§cПропишите §9/choose §cи выберите своего животного!");
 		}
 		
-		if(player.getLocation().getY() <= 80) {
+		if(player.getLocation().getY() <= 0) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24, 102, 473));
 			player.sendMessage(MainAnimals.prefix+"§aНе падай, хе-хе))");
 			player.setHealth(20.0);
@@ -177,6 +217,7 @@ public class ListenersAnimals implements Listener{
 			player.sendMessage(MainAnimals.prefix+"§cПропишите §9/choose §cи выберите своего животного!");
 		}
 	}
+	
 	@EventHandler
 	public void hit(EntityDamageByEntityEvent e) {
 		Player p = (Player)e.getDamager();
@@ -195,7 +236,8 @@ public class ListenersAnimals implements Listener{
 				}
 			}
 		}catch(Exception ex) {
-			
+			ex.printStackTrace();
 		}
 	}
+	
 }

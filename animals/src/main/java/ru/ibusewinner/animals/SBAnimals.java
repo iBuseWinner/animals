@@ -118,24 +118,28 @@ public class SBAnimals implements Listener{
 				
 				int boost = APIAnimals.getLocalBoost(player);
 				
+				int m = 0;
+				int h = 0;
 				Score score15 = objective.getScore("§aБустер: §3x"+String.valueOf(boost));
+				if (MainAnimals.boosters.containsKey(player))
+				{
+					int currentTime = MainAnimals.boosters.get(player).currentTime;
+					int boostTimer = MainAnimals.boosters.get(player).boostTimer;
+					int difference = boostTimer - currentTime;
+					m = difference / 60;
+					
+					h = m / 60;
+					m = m - h*60 + 1;
+
+					score15 = objective.getScore("§aБустер: §3x"+String.valueOf(boost) + " §7на §3" + h + ":" + m);
+				}
 				score15.setScore(3);
 				
-				int currentTime = MainAnimals.boosters.get(player).currentTime;
-				int boostTimer = MainAnimals.boosters.get(player).boostTimer;
-				int difference = boostTimer - currentTime;
-				int m = difference / 60;
-				
-				int h = m / 60;
-				m = m - h*60 + 1;
-				Score score20 = objective.getScore("§aДо окончания буста: §c" + (int)h +  "§f:§c" + m);
-				score20.setScore(2);
-				
 				Score score16 = objective.getScore("§3");
-				score16.setScore(1);
+				score16.setScore(2);
 				
 				Score score19 = objective.getScore("§aОнлайн: §a§l " + Bukkit.getOnlinePlayers().size());
-				score19.setScore(-1);
+				score19.setScore(1);
 				
 				
 				
