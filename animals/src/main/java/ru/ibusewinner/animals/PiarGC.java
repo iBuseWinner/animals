@@ -1,5 +1,7 @@
 package ru.ibusewinner.animals;
 
+import java.util.ArrayList;
+
 import org.bukkit.Bukkit;
 
 public class PiarGC {
