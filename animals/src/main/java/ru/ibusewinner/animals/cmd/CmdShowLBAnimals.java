@@ -1,4 +1,4 @@
-package ru.ibusewinner.animals;
+package ru.ibusewinner.animals.cmd;
 
 import java.util.ArrayList;
 
@@ -9,6 +9,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
+import ru.ibusewinner.animals.MainAnimals;
 import ü.TTA_HoloAPI;
 
 public class CmdShowLBAnimals implements CommandExecutor{

@@ -9,6 +9,18 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.Herbystar.TTA.TTA_Methods;
+import ru.ibusewinner.animals.cmd.CmdBoostAdmAnimals;
+import ru.ibusewinner.animals.cmd.CmdBredAnimals;
+import ru.ibusewinner.animals.cmd.CmdChooseAnimals;
+import ru.ibusewinner.animals.cmd.CmdDonateAnimals;
+import ru.ibusewinner.animals.cmd.CmdGiveAnimals;
+import ru.ibusewinner.animals.cmd.CmdGiveGcAnimals;
+import ru.ibusewinner.animals.cmd.CmdInfoAnimals;
+import ru.ibusewinner.animals.cmd.CmdLevelUp;
+import ru.ibusewinner.animals.cmd.CmdRespawnAnimals;
+import ru.ibusewinner.animals.cmd.CmdShowAnimals;
+import ru.ibusewinner.animals.cmd.CmdShowLBAnimals;
+import ru.ibusewinner.animals.cmd.CmdsAnimals;
 
 public class MainAnimals extends JavaPlugin{
 	

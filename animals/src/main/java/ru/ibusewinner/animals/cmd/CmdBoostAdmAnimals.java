@@ -1,4 +1,4 @@
-package ru.ibusewinner.animals;
+package ru.ibusewinner.animals.cmd;
 
 import org.bukkit.Bukkit;
 import org.bukkit.boss.BarColor;
@@ -10,6 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import de.Herbystar.TTA.TTA_Methods;
+import ru.ibusewinner.animals.Booostoor;
+import ru.ibusewinner.animals.MainAnimals;
 
 public class CmdBoostAdmAnimals implements CommandExecutor{
 

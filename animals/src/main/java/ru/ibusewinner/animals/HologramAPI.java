@@ -1,16 +1,30 @@
 package ru.ibusewinner.animals;
 
+import java.util.HashMap;
 import java.util.Map;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import ü.TTA_HoloAPI;
 
+
+
 public class HologramAPI 
 {
-	public static Map<String, TTA_HoloAPI> holos;
+	public static Map<String, TTA_HoloAPI> holos = new HashMap<String, TTA_HoloAPI>();
+	public Location location;
+	public String name;
+	public HoloType type;
 	
+	public HologramAPI(String name, HoloType type, Location loc) 
+	{
+		this.name = name;
+		this.type = type;
+		this.location = loc;
+	}
+
 	public static void init() 
 	{
 		displayHolos();
@@ -25,7 +39,7 @@ public class HologramAPI
 	
 	public static void addHolo(String name, TTA_HoloAPI holo) // Добавляет новую голограмму в map
 	{
-		holos.put(name, holo);
+//		holos.(name, holo);
 		displayHolo(name);
 	}
 	public static void reloadHolos() 
@@ -37,11 +51,13 @@ public class HologramAPI
 				holo.displayHolo(p);				
 			}
 	}
+	
 	public static void displayHolos() // Показывает все голограммы всем игрокам
 	{
+		
 		if (holos.size() > 0)
 			for (TTA_HoloAPI holo : holos.values()) 
-				for (Player p : Bukkit.getOnlinePlayers()) 
+				for (Player p : Bukkit.getOnlinePlayers())
 					holo.displayHolo(p);
 	}
 	public static void displayHolo(String name) // Показывает определённую голограмму всем игрокам

@@ -1,4 +1,4 @@
-package ru.ibusewinner.animals;
+package ru.ibusewinner.animals.cmd;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
@@ -6,6 +6,9 @@ import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import ru.ibusewinner.animals.APIAnimals;
+import ru.ibusewinner.animals.MainAnimals;
 
 public class CmdRespawnAnimals implements CommandExecutor{
 

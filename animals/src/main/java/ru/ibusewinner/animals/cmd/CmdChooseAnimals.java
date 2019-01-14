@@ -1,4 +1,4 @@
-package ru.ibusewinner.animals;
+package ru.ibusewinner.animals.cmd;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -11,6 +11,8 @@ import me.libraryaddict.disguise.disguisetypes.DisguiseType;
 import me.libraryaddict.disguise.disguisetypes.FlagWatcher;
 import me.libraryaddict.disguise.disguisetypes.MobDisguise;
 import me.libraryaddict.disguise.disguisetypes.watchers.OcelotWatcher;
+import ru.ibusewinner.animals.APIAnimals;
+import ru.ibusewinner.animals.MainAnimals;
 
 public class CmdChooseAnimals implements CommandExecutor{
 
