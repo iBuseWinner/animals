@@ -7,7 +7,9 @@ import org.bukkit.entity.Ocelot;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
+import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -161,22 +163,7 @@ public class ListenersAnimals implements Listener{
 		noPushTeam.addPlayer(player);
 		player.setScoreboard(noPushScoreboard);
 	}
-	
-//	@EventHandler
-//	public void onMobSpawn(EntitySpawnEvent e)
-//	{
-//		
-//		EntityType type = e.getEntityType();
-//		if ( 	type == EntityType.OCELOT ||
-//				type == EntityType.WOLF ||
-//				type == EntityType.POLAR_BEAR ||
-//				type == EntityType.PARROT ||
-//				type == EntityType.RABBIT ||
-//				type == EntityType.COW ||
-//				type == EntityType.PIG ||
-//				type == EntityType.CHICKEN
-//				) ;
-//	}
+
 	public static void noPush()
 	{
 		noPushScoreboard=  Bukkit.getScoreboardManager().getMainScoreboard();
