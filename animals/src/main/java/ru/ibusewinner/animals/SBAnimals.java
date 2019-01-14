@@ -1,10 +1,14 @@
 	package ru.ibusewinner.animals;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import org.bukkit.event.player.PlayerQuitEvent;
 import org.bukkit.scoreboard.DisplaySlot;
 import org.bukkit.scoreboard.Objective;
 import org.bukkit.scoreboard.Score;
@@ -14,6 +18,7 @@ import org.bukkit.scoreboard.ScoreboardManager;
 import de.Herbystar.TTA.TTA_Methods;
 
 public class SBAnimals implements Listener{
+	private static Map<Player, Integer> timers = new HashMap <Player, Integer>();
 	
 	ScoreboardManager manager = Bukkit.getScoreboardManager();
 	final Scoreboard board = manager.getNewScoreboard();
@@ -23,7 +28,7 @@ public class SBAnimals implements Listener{
 	public void onJoin(PlayerJoinEvent event) {
 		final Player player = event.getPlayer();
 		
-		Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(MainAnimals.plugin,new Runnable() {
+		int timer = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 			
 			public void run() {
 				ScoreboardManager manager = Bukkit.getScoreboardManager();
@@ -151,6 +156,13 @@ public class SBAnimals implements Listener{
 
 			}
 		},0,20*2);
+		timers.put(player, timer);
+	}
+	@EventHandler
+	public void onQuit(PlayerQuitEvent e)
+	{
+		Bukkit.getServer().getScheduler().cancelTask(timers.get(e.getPlayer()));
+		timers.remove(e.getPlayer());
 	}
 	
 }
