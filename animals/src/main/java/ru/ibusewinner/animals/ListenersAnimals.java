@@ -204,6 +204,7 @@ public class ListenersAnimals implements Listener{
 		final Player player = event.getPlayer();
 		if(APIAnimals.getAnimal(player) == 0) {
 			player.sendMessage(MainAnimals.prefix+"§cПропишите §9/choose §cи выберите своего животного!");
+			event.setCancelled(true);
 		}
 		
 		if(player.getLocation().getY() <= 86) {
