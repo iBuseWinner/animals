@@ -1,4 +1,4 @@
-package ru.ibusewinner.animals;
+	package ru.ibusewinner.animals;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;

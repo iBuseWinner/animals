@@ -1,9 +1,12 @@
 package ru.ibusewinner.animals;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.bukkit.Bukkit;
 
 public class PiarGC {
-	private int timer = 0;
+	private int time = 0;
 	
 	private String VK = "§7[§c!§7]§3 Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh";
 	private String site = "§7[§c!§7]§3 Наш сайт: §dhttps://vk.cc/8V2iL9";
@@ -14,7 +17,7 @@ public class PiarGC {
 	
 	@SuppressWarnings("deprecation")
 	public void time() {
-		Bukkit.getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
+		timer = Bukkit.getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 			
 			@Override
 			public void run() {
@@ -39,6 +42,7 @@ public class PiarGC {
 				}else {
 					timer++;
 				}
+				time++;
 			}
 		},0,20*60);
 	}

@@ -93,7 +93,7 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 					p.sendMessage(MainAnimals.prefix + "§aБуст §cx2 §aуспешно куплен/продлён на §c30 минут §aза §c150 грендкоинов!");
 				}
 				else if (rgc == 2) 
-					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов! Задонатьте ещё.");
+					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов! грендкоины вы можете купить на сайте §awww.скоро.ru/");
 				else p.sendMessage(MainAnimals.prefix + "§cНеизвестная ошибка! Обратитесь к администратору.");
 			}
 			else
