@@ -72,6 +72,5 @@ public class MainAnimals extends JavaPlugin{
 		Bukkit.getPluginCommand("levelup").setExecutor(new CmdLevelUp());
 		
 		PiarGC pgc = new PiarGC();
-		pgc.time();
 	}
 }
