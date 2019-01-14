@@ -3,6 +3,7 @@ package ru.ibusewinner.animals;
 import java.util.Map;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Location;
 import org.bukkit.entity.Player;
 
 import ü.TTA_HoloAPI;
@@ -10,7 +11,8 @@ import ü.TTA_HoloAPI;
 public class HologramAPI 
 {
 	public static Map<String, TTA_HoloAPI> holos;
-	
+	public static Location location;
+
 	public static void init() 
 	{
 		displayHolos();
@@ -37,11 +39,13 @@ public class HologramAPI
 				holo.displayHolo(p);				
 			}
 	}
+	
 	public static void displayHolos() // Показывает все голограммы всем игрокам
 	{
+		
 		if (holos.size() > 0)
 			for (TTA_HoloAPI holo : holos.values()) 
-				for (Player p : Bukkit.getOnlinePlayers()) 
+				for (Player p : Bukkit.getOnlinePlayers())
 					holo.displayHolo(p);
 	}
 	public static void displayHolo(String name) // Показывает определённую голограмму всем игрокам

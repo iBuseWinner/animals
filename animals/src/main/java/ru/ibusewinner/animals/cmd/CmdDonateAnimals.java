@@ -1,4 +1,4 @@
-package ru.ibusewinner.animals;
+package ru.ibusewinner.animals.cmd;
 
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
@@ -13,6 +13,10 @@ import org.bukkit.event.inventory.InventoryClickEvent;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
+
+import ru.ibusewinner.animals.APIAnimals;
+import ru.ibusewinner.animals.LocalBoost;
+import ru.ibusewinner.animals.MainAnimals;
 
 public class CmdDonateAnimals implements CommandExecutor, Listener{
 	

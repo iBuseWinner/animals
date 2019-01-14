@@ -1,9 +1,13 @@
-package ru.ibusewinner.animals;
+package ru.ibusewinner.animals.cmd;
 
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+
+import ru.ibusewinner.animals.APIAnimals;
+import ru.ibusewinner.animals.MainAnimals;
+import ru.ibusewinner.animals.Сost;
 
 public class CmdsAnimals implements CommandExecutor{
 
@@ -608,10 +612,10 @@ public class CmdsAnimals implements CommandExecutor{
 					}else if(a[0].equalsIgnoreCase("human") && a.length == 2) {
 						if(a[1].equalsIgnoreCase("1")) {
 							if(APIAnimals.getHum1(send) == 0) {
-								if(APIAnimals.getBal(send) >= OoOooOOo_cost_OoOOoO.hum1r) {
-									if(APIAnimals.getHearts(send) >= OoOooOOo_cost_OoOOoO.hum1h) {
-										APIAnimals.removeHearts(send,OoOooOOo_cost_OoOOoO.hum1h);
-										APIAnimals.removeBal(send,OoOooOOo_cost_OoOOoO.hum1r);
+								if(APIAnimals.getBal(send) >= Сost.hum1r) {
+									if(APIAnimals.getHearts(send) >= Сost.hum1h) {
+										APIAnimals.removeHearts(send,Сost.hum1h);
+										APIAnimals.removeBal(send,Сost.hum1r);
 										APIAnimals.addHuman(send,1);
 										APIAnimals.addHum1(send);
 										APIAnimals.addHearts(send,250);
@@ -628,10 +632,10 @@ public class CmdsAnimals implements CommandExecutor{
 							}
 						}else if(a[1].equalsIgnoreCase("2")) {
 							if(APIAnimals.getHum2(send) == 0) {
-								if(APIAnimals.getBal(send) >= OoOooOOo_cost_OoOOoO.hum2r) {
-									if(APIAnimals.getHearts(send) >= OoOooOOo_cost_OoOOoO.hum2h) {
-										APIAnimals.removeHearts(send,OoOooOOo_cost_OoOOoO.hum2h);
-										APIAnimals.removeBal(send,OoOooOOo_cost_OoOOoO.hum2r);
+								if(APIAnimals.getBal(send) >= Сost.hum2r) {
+									if(APIAnimals.getHearts(send) >= Сost.hum2h) {
+										APIAnimals.removeHearts(send,Сost.hum2h);
+										APIAnimals.removeBal(send,Сost.hum2r);
 										APIAnimals.addHuman(send,1);
 										APIAnimals.addHum2(send);
 										APIAnimals.addHearts(send,750);
@@ -648,10 +652,10 @@ public class CmdsAnimals implements CommandExecutor{
 							}
 						}else if(a[1].equalsIgnoreCase("3")) {
 							if(APIAnimals.getHum3(send) == 0) {
-								if(APIAnimals.getBal(send) >= OoOooOOo_cost_OoOOoO.hum3r) {
-									if(APIAnimals.getHearts(send) >= OoOooOOo_cost_OoOOoO.hum3h) {
-										APIAnimals.removeHearts(send,OoOooOOo_cost_OoOOoO.hum3h);
-										APIAnimals.removeBal(send,OoOooOOo_cost_OoOOoO.hum3r);
+								if(APIAnimals.getBal(send) >= Сost.hum3r) {
+									if(APIAnimals.getHearts(send) >= Сost.hum3h) {
+										APIAnimals.removeHearts(send,Сost.hum3h);
+										APIAnimals.removeBal(send,Сost.hum3r);
 										APIAnimals.addHuman(send,1);
 										APIAnimals.addHum3(send);
 										APIAnimals.addHearts(send,1250);
@@ -668,10 +672,10 @@ public class CmdsAnimals implements CommandExecutor{
 							}
 						}else if(a[1].equalsIgnoreCase("4")) {
 							if(APIAnimals.getHum4(send) == 0) {
-								if(APIAnimals.getBal(send) >= OoOooOOo_cost_OoOOoO.hum4r) {
-									if(APIAnimals.getHearts(send) >= OoOooOOo_cost_OoOOoO.hum4h) {
-										APIAnimals.removeHearts(send,OoOooOOo_cost_OoOOoO.hum4h);
-										APIAnimals.removeBal(send,OoOooOOo_cost_OoOOoO.hum4r);
+								if(APIAnimals.getBal(send) >= Сost.hum4r) {
+									if(APIAnimals.getHearts(send) >= Сost.hum4h) {
+										APIAnimals.removeHearts(send,Сost.hum4h);
+										APIAnimals.removeBal(send,Сost.hum4r);
 										APIAnimals.addHuman(send,1);
 										APIAnimals.addHum4(send);
 										APIAnimals.addHearts(send,2000);
@@ -688,10 +692,10 @@ public class CmdsAnimals implements CommandExecutor{
 							}
 						}else if(a[1].equalsIgnoreCase("5")) {
 							if(APIAnimals.getHum5(send) == 0) {
-								if(APIAnimals.getBal(send) >= OoOooOOo_cost_OoOOoO.hum5r) {
-									if(APIAnimals.getHearts(send) >= OoOooOOo_cost_OoOOoO.hum5h) {
-										APIAnimals.removeHearts(send,OoOooOOo_cost_OoOOoO.hum5h);
-										APIAnimals.removeBal(send,OoOooOOo_cost_OoOOoO.hum5r);
+								if(APIAnimals.getBal(send) >= Сost.hum5r) {
+									if(APIAnimals.getHearts(send) >= Сost.hum5h) {
+										APIAnimals.removeHearts(send,Сost.hum5h);
+										APIAnimals.removeBal(send,Сost.hum5r);
 										APIAnimals.addHuman(send,1);
 										APIAnimals.addHum5(send);
 										APIAnimals.addHearts(send,5000);
@@ -708,10 +712,10 @@ public class CmdsAnimals implements CommandExecutor{
 							}
 						}else if(a[1].equalsIgnoreCase("6")) {
 							if(APIAnimals.getHum6(send) == 0) {
-								if(APIAnimals.getBal(send) >= OoOooOOo_cost_OoOOoO.hum6r) {
-									if(APIAnimals.getHearts(send) >= OoOooOOo_cost_OoOOoO.hum6h) {
-										APIAnimals.removeHearts(send,OoOooOOo_cost_OoOOoO.hum6h);
-										APIAnimals.removeBal(send,OoOooOOo_cost_OoOOoO.hum6r);
+								if(APIAnimals.getBal(send) >= Сost.hum6r) {
+									if(APIAnimals.getHearts(send) >= Сost.hum6h) {
+										APIAnimals.removeHearts(send,Сost.hum6h);
+										APIAnimals.removeBal(send,Сost.hum6r);
 										APIAnimals.addHuman(send,1);
 										APIAnimals.addHum6(send);
 										APIAnimals.addHearts(send,15000);
@@ -728,10 +732,10 @@ public class CmdsAnimals implements CommandExecutor{
 							}
 						}else if(a[1].equalsIgnoreCase("7")) {
 							if(APIAnimals.getHum7(send) == 0) {
-								if(APIAnimals.getBal(send) >= OoOooOOo_cost_OoOOoO.hum7r) {
-									if(APIAnimals.getHearts(send) >= OoOooOOo_cost_OoOOoO.hum7h) {
-										APIAnimals.removeHearts(send,OoOooOOo_cost_OoOOoO.hum7h);
-										APIAnimals.removeBal(send,OoOooOOo_cost_OoOOoO.hum7r);
+								if(APIAnimals.getBal(send) >= Сost.hum7r) {
+									if(APIAnimals.getHearts(send) >= Сost.hum7h) {
+										APIAnimals.removeHearts(send,Сost.hum7h);
+										APIAnimals.removeBal(send,Сost.hum7r);
 										APIAnimals.addHuman(send,1);
 										APIAnimals.addHum7(send);
 										APIAnimals.addHearts(send,30000);
@@ -748,10 +752,10 @@ public class CmdsAnimals implements CommandExecutor{
 							}
 						}else if(a[1].equalsIgnoreCase("8")) {
 							if(APIAnimals.getHum8(send) == 0) {
-								if(APIAnimals.getBal(send) >= OoOooOOo_cost_OoOOoO.hum8r) {
-									if(APIAnimals.getHearts(send) >= OoOooOOo_cost_OoOOoO.hum8h) {
-										APIAnimals.removeHearts(send,OoOooOOo_cost_OoOOoO.hum8h);
-										APIAnimals.removeBal(send,OoOooOOo_cost_OoOOoO.hum8r);
+								if(APIAnimals.getBal(send) >= Сost.hum8r) {
+									if(APIAnimals.getHearts(send) >= Сost.hum8h) {
+										APIAnimals.removeHearts(send,Сost.hum8h);
+										APIAnimals.removeBal(send,Сost.hum8r);
 										APIAnimals.addHuman(send,1);
 										APIAnimals.addHum8(send);
 										
@@ -767,10 +771,10 @@ public class CmdsAnimals implements CommandExecutor{
 							}
 						}else if(a[1].equalsIgnoreCase("9")) {
 							if(APIAnimals.getHum9(send) == 0) {
-								if(APIAnimals.getBal(send) >= OoOooOOo_cost_OoOOoO.hum9r) {
-									if(APIAnimals.getHearts(send) >= OoOooOOo_cost_OoOOoO.hum9h) {
-										APIAnimals.removeHearts(send,OoOooOOo_cost_OoOOoO.hum9h);
-										APIAnimals.removeBal(send,OoOooOOo_cost_OoOOoO.hum9r);
+								if(APIAnimals.getBal(send) >= Сost.hum9r) {
+									if(APIAnimals.getHearts(send) >= Сost.hum9h) {
+										APIAnimals.removeHearts(send,Сost.hum9h);
+										APIAnimals.removeBal(send,Сost.hum9r);
 										APIAnimals.addHuman(send,1);
 										APIAnimals.addHum9(send);
 										
