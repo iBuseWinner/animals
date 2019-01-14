@@ -1,5 +1,6 @@
 package ru.ibusewinner.animals;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import org.bukkit.Bukkit;
@@ -7,11 +8,12 @@ import org.bukkit.Bukkit;
 public class PiarGC {
 	private int time = 0;
 	
-	private static List<String> messages;
+	private static ArrayList<String> messages;
 	private int msgI = 0;
 	public static int timer;
 	public PiarGC() 
 	{
+		messages = new ArrayList<String>();
 		messages.add("§7[§c!§7]§3 Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh");
 		messages.add("§7[§c!§7]§3 Наш сайт: §dww.скоро.net");
 		messages.add("§7[§c!§7]§3 Наш форум: §awww.forum.скоро.net");
