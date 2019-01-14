@@ -32,7 +32,6 @@ public class MainAnimals extends JavaPlugin{
 	public void onEnable() {
 		plugin = this;
 		MySQLAnimals.connect();
-		APIAnimals.createTable();
 		regCmdList();
 	}
 	@Override

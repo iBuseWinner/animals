@@ -9,7 +9,7 @@ import org.bukkit.Bukkit;
 
 public class MySQLAnimals {
 	
-	public static String host = "31.202.128.83";
+	public static String host = "127.0.0.1";
 	public static String port = "3306";
 	public static String database = "animals";
 	public static String user = "root";

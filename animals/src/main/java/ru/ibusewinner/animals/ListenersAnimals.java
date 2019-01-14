@@ -8,9 +8,7 @@ import org.bukkit.entity.Ocelot;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
@@ -126,17 +124,18 @@ public class ListenersAnimals implements Listener{
 			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§9meow §d;3");
 		}
 		
-		if(APIAnimals.getAnimal(player) == 0) {
+		
 			Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 				
 				@Override
 				public void run() {
-					player.sendMessage(MainAnimals.prefix+"§cСначала авторизуйтесь, потом выберите животного через /choose");
-					player.sendMessage(MainAnimals.prefix+"§cЕсли Вы здесь впервые, то введите /reg <пароль> <повтор пароля>");
-					player.sendMessage(MainAnimals.prefix+"§cЕсли Вы здесь уже играли, то введите /l <пароль>");
+					if(APIAnimals.getAnimal(player) == 0) {
+						player.sendMessage(MainAnimals.prefix+"§cСначала авторизуйтесь, потом выберите животного через /choose");
+						player.sendMessage(MainAnimals.prefix+"§cЕсли Вы здесь впервые, то введите /reg <пароль> <повтор пароля>");
+						player.sendMessage(MainAnimals.prefix+"§cЕсли Вы здесь уже играли, то введите /l <пароль>");
+					}
 				}
 			},0,20*30);
-		}
 		
 		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 			public void run() {
