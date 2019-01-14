@@ -1,19 +1,20 @@
 package ru.ibusewinner.animals;
 
 import org.bukkit.Bukkit;
+import org.bukkit.Color;
 import org.bukkit.Location;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.Ocelot;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
-import org.bukkit.event.entity.EntityToggleGlideEvent;
 import org.bukkit.event.player.AsyncPlayerChatEvent;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.event.player.PlayerMoveEvent;
 import org.bukkit.event.player.PlayerQuitEvent;
+import org.bukkit.potion.PotionEffect;
+import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.Team;
 import org.bukkit.scoreboard.Team.Option;
@@ -45,8 +46,9 @@ public class ListenersAnimals implements Listener{
 			APIAnimals.register(player);
 			player.sendMessage(MainAnimals.prefix+"§aВы играете впервые на данном режиме, поэтому Вы будете зарегистрированы в нашей базе данных!");
 			Bukkit.broadcastMessage(MainAnimals.prefix+"§bИгрок "+player.getName()+" §bвпервые зашёл на данный режим! Поприветствуем его!");
-			player.sendMessage(MainAnimals.prefix+"§cПропишите §9/choose §cи выберите своего животного!");
 		}
+		Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),"nte reload");
+		
 		MobDisguise cat = new MobDisguise(DisguiseType.OCELOT, false);
 		OcelotWatcher catw = (OcelotWatcher) cat.getWatcher();
 		catw.setType(Ocelot.Type.BLACK_CAT);
@@ -122,6 +124,19 @@ public class ListenersAnimals implements Listener{
 			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§9meow §d;3");
 		}
 		
+		
+			Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
+				
+				@Override
+				public void run() {
+					if(APIAnimals.getAnimal(player) == 0) {
+						player.sendMessage(MainAnimals.prefix+"§cСначала авторизуйтесь, потом выберите животного через /choose");
+						player.sendMessage(MainAnimals.prefix+"§cЕсли Вы здесь впервые, то введите /reg <пароль> <повтор пароля>");
+						player.sendMessage(MainAnimals.prefix+"§cЕсли Вы здесь уже играли, то введите /l <пароль>");
+					}
+				}
+			},0,20*30);
+		
 		Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin,new Runnable() {
 			public void run() {
 				for(Player pl : Bukkit.getOnlinePlayers()) {
@@ -192,9 +207,10 @@ public class ListenersAnimals implements Listener{
 		}
 		
 		if(player.getLocation().getY() <= 86) {
+			player.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE,10,100,false,false,Color.BLACK));
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
-			player.sendMessage(MainAnimals.prefix+"§aНе падай, хе-хе))");
 			player.setHealth(20.0);
+			player.sendMessage(MainAnimals.prefix+"§aНе падай, хе-хе))");
 		}
 	}
 	@EventHandler
