@@ -11,6 +11,9 @@ import ru.ibusewinner.animals.Сost;
 
 public class CmdsAnimals implements CommandExecutor{
 
+	/* (non-Javadoc)
+	 * @see org.bukkit.command.CommandExecutor#onCommand(org.bukkit.command.CommandSender, org.bukkit.command.Command, java.lang.String, java.lang.String[])
+	 */
 	public boolean onCommand(CommandSender s, Command c, String l, String[] a) {
 		if(!(s instanceof Player)) {
 			s.sendMessage(MainAnimals.prefix+"§cКоманда только для игроков!");
@@ -58,7 +61,7 @@ public class CmdsAnimals implements CommandExecutor{
 							if(APIAnimals.getBizKol(send) == 0) {
 								if(APIAnimals.getBal(send) >= 300) {
 									APIAnimals.removeBal(send,300);
-									APIAnimals.addIncome(send,5);
+									APIAnimals.addIncome(send,1);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizKol(send);
 									APIAnimals.addHearts(send,20);
@@ -71,7 +74,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizKol(send) == 1) {
 								if(APIAnimals.getBal(send) >= 600) {
 									APIAnimals.removeBal(send,600);
-									APIAnimals.addIncome(send,6);
+									APIAnimals.addIncome(send,1);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizKol(send);
 									APIAnimals.addHearts(send,20);
@@ -84,7 +87,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizKol(send) == 2) {
 								if(APIAnimals.getBal(send) >= 900) {
 									APIAnimals.removeBal(send,900);
-									APIAnimals.addIncome(send,7);
+									APIAnimals.addIncome(send,1);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizKol(send);
 									APIAnimals.addHearts(send,20);
@@ -97,7 +100,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizKol(send) == 3) {
 								if(APIAnimals.getBal(send) >= 1200) {
 									APIAnimals.removeBal(send,1200);
-									APIAnimals.addIncome(send,8);
+									APIAnimals.addIncome(send,1);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizKol(send);
 									APIAnimals.addHearts(send,20);
@@ -110,7 +113,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizKol(send) == 4) {
 								if(APIAnimals.getBal(send) >= 1500) {
 									APIAnimals.removeBal(send,1500);
-									APIAnimals.addIncome(send,10);
+									APIAnimals.addIncome(send,1);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizKol(send);
 									APIAnimals.addHearts(send,20);
@@ -127,7 +130,7 @@ public class CmdsAnimals implements CommandExecutor{
 							if(APIAnimals.getBizFarm(send) == 0) {
 								if(APIAnimals.getBal(send) >= 10000) {
 									APIAnimals.removeBal(send,10000);
-									APIAnimals.addIncome(send,10);
+									APIAnimals.addIncome(send,5);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizFarm(send);
 									APIAnimals.addHearts(send,50);
@@ -140,7 +143,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizFarm(send) == 1) {
 								if(APIAnimals.getBal(send) >= 20000) {
 									APIAnimals.removeBal(send,20000);
-									APIAnimals.addIncome(send,10);
+									APIAnimals.addIncome(send,5);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizFarm(send);
 									APIAnimals.addHearts(send,50);
@@ -166,7 +169,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizFarm(send) == 3) {
 								if(APIAnimals.getBal(send) >= 40000) {
 									APIAnimals.removeBal(send,40000);
-									APIAnimals.addIncome(send,10);
+									APIAnimals.addIncome(send,5);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizFarm(send);
 									APIAnimals.addHearts(send,50);
@@ -179,7 +182,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizFarm(send) == 4) {
 								if(APIAnimals.getBal(send) >= 50000) {
 									APIAnimals.removeBal(send,50000);
-									APIAnimals.addIncome(send,10);
+									APIAnimals.addIncome(send,5);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizFarm(send);
 									APIAnimals.addHearts(send,50);
@@ -196,7 +199,7 @@ public class CmdsAnimals implements CommandExecutor{
 							if(APIAnimals.getBizDerPri(send) == 0) {
 								if(APIAnimals.getBal(send) >= 100000) {
 									APIAnimals.removeBal(send,100000);
-									APIAnimals.addIncome(send,50);
+									APIAnimals.addIncome(send,20);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizDerPri(send);
 									APIAnimals.addHearts(send,75);
@@ -209,7 +212,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizDerPri(send) == 1) {
 								if(APIAnimals.getBal(send) >= 200000) {
 									APIAnimals.removeBal(send,200000);
-									APIAnimals.addIncome(send,50);
+									APIAnimals.addIncome(send,20);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizDerPri(send);
 									APIAnimals.addHearts(send,75);
@@ -222,7 +225,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizDerPri(send) == 2) {
 								if(APIAnimals.getBal(send) >= 300000) {
 									APIAnimals.removeBal(send,300000);
-									APIAnimals.addIncome(send,50);
+									APIAnimals.addIncome(send,20);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizDerPri(send);
 									APIAnimals.addHearts(send,75);
@@ -235,7 +238,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizDerPri(send) == 3) {
 								if(APIAnimals.getBal(send) >= 400000) {
 									APIAnimals.removeBal(send,400000);
-									APIAnimals.addIncome(send,50);
+									APIAnimals.addIncome(send,20);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizDerPri(send);
 									APIAnimals.addHearts(send,75);
@@ -248,7 +251,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizDerPri(send) == 4) {
 								if(APIAnimals.getBal(send) >= 500000) {
 									APIAnimals.removeBal(send,500000);
-									APIAnimals.addIncome(send,50);
+									APIAnimals.addIncome(send,20);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizDerPri(send);
 									APIAnimals.addHearts(send,75);
@@ -265,7 +268,7 @@ public class CmdsAnimals implements CommandExecutor{
 							if(APIAnimals.getBizGorPri(send) == 0) {
 								if(APIAnimals.getBal(send) >= 500000) {
 									APIAnimals.removeBal(send,500000);
-									APIAnimals.addIncome(send,75);
+									APIAnimals.addIncome(send,50);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizGorPri(send);
 									APIAnimals.addHearts(send,75);
@@ -278,7 +281,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizGorPri(send) == 1) {
 								if(APIAnimals.getBal(send) >= 1000000) {
 									APIAnimals.removeBal(send,1000000);
-									APIAnimals.addIncome(send,75);
+									APIAnimals.addIncome(send,50);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizGorPri(send);
 									APIAnimals.addHearts(send,75);
@@ -291,7 +294,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizGorPri(send) == 2) {
 								if(APIAnimals.getBal(send) >= 1500000) {
 									APIAnimals.removeBal(send,1500000);
-									APIAnimals.addIncome(send,75);
+									APIAnimals.addIncome(send,50);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizGorPri(send);
 									APIAnimals.addHearts(send,75);
@@ -304,7 +307,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizGorPri(send) == 3) {
 								if(APIAnimals.getBal(send) >= 2000000) {
 									APIAnimals.removeBal(send,2000000);
-									APIAnimals.addIncome(send,75);
+									APIAnimals.addIncome(send,50);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizGorPri(send);
 									APIAnimals.addHearts(send,75);
@@ -317,7 +320,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizGorPri(send) == 4) {
 								if(APIAnimals.getBal(send) >= 2500000) {
 									APIAnimals.removeBal(send,2500000);
-									APIAnimals.addIncome(send,75);
+									APIAnimals.addIncome(send,50);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizGorPri(send);
 									APIAnimals.addHearts(send,75);
@@ -334,7 +337,7 @@ public class CmdsAnimals implements CommandExecutor{
 							if(APIAnimals.getBizCirc(send) == 0) {
 								if(APIAnimals.getBal(send) >= 1000000) {
 									APIAnimals.removeBal(send,1000000);
-									APIAnimals.addIncome(send,120);
+									APIAnimals.addIncome(send,100);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizCirc(send);
 									APIAnimals.addHearts(send,100);
@@ -347,7 +350,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizCirc(send) == 1) {
 								if(APIAnimals.getBal(send) >= 2000000) {
 									APIAnimals.removeBal(send,2000000);
-									APIAnimals.addIncome(send,120);
+									APIAnimals.addIncome(send,100);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizCirc(send);
 									APIAnimals.addHearts(send,100);
@@ -360,7 +363,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizCirc(send) == 2) {
 								if(APIAnimals.getBal(send) >= 3000000) {
 									APIAnimals.removeBal(send,3000000);
-									APIAnimals.addIncome(send,120);
+									APIAnimals.addIncome(send,100);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizCirc(send);
 									APIAnimals.addHearts(send,100);
@@ -373,7 +376,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizCirc(send) == 3) {
 								if(APIAnimals.getBal(send) >= 4000000) {
 									APIAnimals.removeBal(send,4000000);
-									APIAnimals.addIncome(send,120);
+									APIAnimals.addIncome(send,100);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizCirc(send);
 									APIAnimals.addHearts(send,100);
@@ -386,7 +389,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizCirc(send) == 4) {
 								if(APIAnimals.getBal(send) >= 5000000) {
 									APIAnimals.removeBal(send,5000000);
-									APIAnimals.addIncome(send,120);
+									APIAnimals.addIncome(send,100);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizCirc(send);
 									APIAnimals.addHearts(send,100);
@@ -403,7 +406,7 @@ public class CmdsAnimals implements CommandExecutor{
 							if(APIAnimals.getBizAniPoy(send) == 0) {
 								if(APIAnimals.getBal(send) >= 5000000) {
 									APIAnimals.removeBal(send,5000000);
-									APIAnimals.addIncome(send,250);
+									APIAnimals.addIncome(send,150);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniPoy(send);
 									APIAnimals.addHearts(send,1000);
@@ -416,7 +419,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniPoy(send) == 1) {
 								if(APIAnimals.getBal(send) >= 10000000) {
 									APIAnimals.removeBal(send,10000000);
-									APIAnimals.addIncome(send,250);
+									APIAnimals.addIncome(send,150);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniPoy(send);
 									APIAnimals.addHearts(send,1000);
@@ -429,7 +432,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniPoy(send) == 2) {
 								if(APIAnimals.getBal(send) >= 15000000) {
 									APIAnimals.removeBal(send,15000000);
-									APIAnimals.addIncome(send,250);
+									APIAnimals.addIncome(send,150);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniPoy(send);
 									APIAnimals.addHearts(send,1000);
@@ -442,7 +445,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniPoy(send) == 3) {
 								if(APIAnimals.getBal(send) >= 20000000) {
 									APIAnimals.removeBal(send,20000000);
-									APIAnimals.addIncome(send,250);
+									APIAnimals.addIncome(send,150);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniPoy(send);
 									APIAnimals.addHearts(send,1000);
@@ -455,7 +458,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniPoy(send) == 4) {
 								if(APIAnimals.getBal(send) >= 25000000) {
 									APIAnimals.removeBal(send,25000000);
-									APIAnimals.addIncome(send,250);
+									APIAnimals.addIncome(send,150);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniPoy(send);
 									APIAnimals.addHearts(send,1000);
@@ -472,7 +475,7 @@ public class CmdsAnimals implements CommandExecutor{
 							if(APIAnimals.getBizAniPol(send) == 0) {
 								if(APIAnimals.getBal(send) >= 25000000) {
 									APIAnimals.removeBal(send,25000000);
-									APIAnimals.addIncome(send,500);
+									APIAnimals.addIncome(send,250);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniPol(send);
 									APIAnimals.addHearts(send,5000);
@@ -485,7 +488,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniPol(send) == 1) {
 								if(APIAnimals.getBal(send) >= 50000000) {
 									APIAnimals.removeBal(send,50000000);
-									APIAnimals.addIncome(send,500);
+									APIAnimals.addIncome(send,250);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniPol(send);
 									APIAnimals.addHearts(send,5000);
@@ -498,7 +501,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniPol(send) == 2) {
 								if(APIAnimals.getBal(send) >= 75000000) {
 									APIAnimals.removeBal(send,75000000);
-									APIAnimals.addIncome(send,500);
+									APIAnimals.addIncome(send,250);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniPol(send);
 									APIAnimals.addHearts(send,5000);
@@ -511,7 +514,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniPol(send) == 3) {
 								if(APIAnimals.getBal(send) >= 100000000) {
 									APIAnimals.removeBal(send,100000000);
-									APIAnimals.addIncome(send,500);
+									APIAnimals.addIncome(send,250);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniPol(send);
 									APIAnimals.addHearts(send,5000);
@@ -524,7 +527,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniPol(send) == 4) {
 								if(APIAnimals.getBal(send) >= 125000000) {
 									APIAnimals.removeBal(send,125000000);
-									APIAnimals.addIncome(send,500);
+									APIAnimals.addIncome(send,250);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniPol(send);
 									APIAnimals.addHearts(send,5000);
@@ -541,7 +544,7 @@ public class CmdsAnimals implements CommandExecutor{
 							if(APIAnimals.getBizAniCou(send) == 0) {
 								if(APIAnimals.getBal(send) >= 1000000000) {
 									APIAnimals.removeBal(send,1000000000);
-									APIAnimals.addIncome(send,100000);
+									APIAnimals.addIncome(send,500);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniCou(send);
 									APIAnimals.addHearts(send,10000);
@@ -554,7 +557,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniCou(send) == 1) {
 								if(APIAnimals.getBal(send) >= 2000000000) {
 									APIAnimals.removeBal(send,2000000000);
-									APIAnimals.addIncome(send,100000);
+									APIAnimals.addIncome(send,500);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniCou(send);
 									APIAnimals.addHearts(send,10000);
@@ -567,7 +570,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniCou(send) == 2) {
 								if(APIAnimals.getBal(send) >= 2147483647) {
 									APIAnimals.removeBal(send,2147483647);
-									APIAnimals.addIncome(send,100000);
+									APIAnimals.addIncome(send,500);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniCou(send);
 									APIAnimals.addHearts(send,10000);
@@ -580,7 +583,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniCou(send) == 3) {
 								if(APIAnimals.getBal(send) >= 2147483647) {
 									APIAnimals.removeBal(send,2147483647);
-									APIAnimals.addIncome(send,100000);
+									APIAnimals.addIncome(send,500);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniCou(send);
 									APIAnimals.addHearts(send,10000);
@@ -593,7 +596,7 @@ public class CmdsAnimals implements CommandExecutor{
 							}else if(APIAnimals.getBizAniCou(send) == 4) {
 								if(APIAnimals.getBal(send) >= 2147483647) {
 									APIAnimals.removeBal(send,2147483647);
-									APIAnimals.addIncome(send,100000);
+									APIAnimals.addIncome(send,500);
 									APIAnimals.addBiz(send);
 									APIAnimals.addBizAniCou(send);
 									APIAnimals.addHearts(send,10000);
