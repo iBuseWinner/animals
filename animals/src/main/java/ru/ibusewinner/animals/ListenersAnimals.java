@@ -146,28 +146,28 @@ public class ListenersAnimals implements Listener{
 						APIAnimals.addHearts(player,1);
 					}
 					if(APIAnimals.getHum2(player) == 1) {
-						APIAnimals.addHearts(player,2);
+						APIAnimals.addHearts(player,1);
 					}
 					if(APIAnimals.getHum3(player) == 1) {
-						APIAnimals.addHearts(player,3);
+						APIAnimals.addHearts(player,1);
 					}
 					if(APIAnimals.getHum4(player) == 1) {
-						APIAnimals.addHearts(player,4);
+						APIAnimals.addHearts(player,1);
 					}
 					if(APIAnimals.getHum5(player) == 1) {
-						APIAnimals.addHearts(player,5);
+						APIAnimals.addHearts(player,1);
 					}
 					if(APIAnimals.getHum6(player) == 1) {
-						APIAnimals.addHearts(player,6);
+						APIAnimals.addHearts(player,1);
 					}
 					if(APIAnimals.getHum7(player) == 1) {
-						APIAnimals.addHearts(player,7);
+						APIAnimals.addHearts(player,1);
 					}
 					if(APIAnimals.getHum8(player) == 1) {
-						APIAnimals.addHearts(player,8);
+						APIAnimals.addHearts(player,1);
 					}
 					if(APIAnimals.getHum9(player) == 1) {
-						APIAnimals.addHearts(player,9);
+						APIAnimals.addHearts(player,1);
 					}
 				}
 			}
