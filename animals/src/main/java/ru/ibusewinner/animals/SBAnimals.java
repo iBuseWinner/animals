@@ -147,7 +147,7 @@ public class SBAnimals implements Listener{
 				player.setScoreboard(board);
 
 				TTA_Methods.sendTablist(player,"\n§a§lGrendCity\n    §eСервер, который вы ждали! ;3\n\n§3Онлайн на всём сервере: §a"+Bukkit.getOnlinePlayers().size()
-						+"\n","\n§3Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh\n§3Наш сайт: §bwww.скоро.net\n§3Наш форум: §6www.forum.скоро.net\n");			
+						+"\n","\n§3Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh\n§3Наш сайт: §bhttps://vk.cc/8V2iL9\n");			
 
 			}
 		},0,20*2);
