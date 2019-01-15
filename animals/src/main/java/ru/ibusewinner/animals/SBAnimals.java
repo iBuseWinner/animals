@@ -37,7 +37,12 @@ public class SBAnimals implements Listener{
 				{
 					ScoreboardManager manager = Bukkit.getScoreboardManager();
 					final Scoreboard board = manager.getMainScoreboard();
-					final Objective objective = board.registerNewObjective("AnimalLive", "dummy");
+					Objective objective;
+					try {
+						objective = board.registerNewObjective("AnimalLive", "dummy");
+					} catch (Exception e) {
+						objective = board.getObjective("AnimalLive");
+					}
 					
 					objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 					objective.setDisplayName("§e§lЖизнь Животных");
