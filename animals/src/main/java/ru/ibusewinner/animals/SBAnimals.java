@@ -21,7 +21,7 @@ public class SBAnimals implements Listener{
 	private static Map<Player, Integer> timers = new HashMap <Player, Integer>();
 	
 	ScoreboardManager manager = Bukkit.getScoreboardManager();
-	final Scoreboard board = manager.getNewScoreboard();
+	final Scoreboard board = manager.getMainScoreboard();
 	final Objective objective = board.registerNewObjective("AnimalLive", "dummy");
 	public static int timer = 0;
 	@SuppressWarnings("deprecation")
@@ -36,7 +36,7 @@ public class SBAnimals implements Listener{
 				for (Player player : Bukkit.getOnlinePlayers())
 				{
 					ScoreboardManager manager = Bukkit.getScoreboardManager();
-					final Scoreboard board = manager.getNewScoreboard();
+					final Scoreboard board = manager.getMainScoreboard();
 					final Objective objective = board.registerNewObjective("AnimalLive", "dummy");
 					
 					objective.setDisplaySlot(DisplaySlot.SIDEBAR);
