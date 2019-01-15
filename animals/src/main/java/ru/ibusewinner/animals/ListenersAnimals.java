@@ -173,6 +173,7 @@ public class ListenersAnimals implements Listener{
 			}
 		},0,20*2);
 
+		DisguiseAPI.setViewDisguiseToggled(player, true);
 		LocalBoost lb = new LocalBoost(player);
 		
 		noPushTeam.addPlayer(player);

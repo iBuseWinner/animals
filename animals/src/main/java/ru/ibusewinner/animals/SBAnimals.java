@@ -20,29 +20,26 @@ import de.Herbystar.TTA.TTA_Methods;
 public class SBAnimals implements Listener{
 	private static Map<Player, Integer> timers = new HashMap <Player, Integer>();
 	
-	ScoreboardManager manager = Bukkit.getScoreboardManager();
-//	final Scoreboard board = manager.getNewScoreboard();
+	static ScoreboardManager manager = Bukkit.getScoreboardManager();
+	static Scoreboard board = manager.getMainScoreboard();
 	static Objective objective;
 	public static int timer = 0;
 	@SuppressWarnings("deprecation")
 	public static void newScoreboardTimer()
 	{
 		
-		timer = Bukkit.getServer().getScheduler().scheduleAsyncRepeatingTask(MainAnimals.plugin, new Runnable() 
+		timer = Bukkit.getServer().getScheduler().scheduleSyncRepeatingTask(MainAnimals.plugin, new Runnable() 
 		{
 			@Override
 			public void run() 
 			{
 				for (Player player : Bukkit.getOnlinePlayers())
 				{
-					ScoreboardManager manager = Bukkit.getScoreboardManager();
-					final Scoreboard board = manager.getMainScoreboard();
-					try {
+					Scoreboard board = manager.getNewScoreboard();
+					Objective objective;
+					if (board.getObjective("AnimalLive") == null)
 						objective = board.registerNewObjective("AnimalLive", "dummy");
-					} catch (Exception e) {
-						objective = board.getObjective("AnimalLive");
-						e.printStackTrace();
-					}
+					objective = board.getObjective("AnimalLive");
 					
 					objective.setDisplaySlot(DisplaySlot.SIDEBAR);
 					objective.setDisplayName("§e§lЖизнь Животных");

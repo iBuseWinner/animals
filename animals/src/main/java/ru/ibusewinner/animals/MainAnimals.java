@@ -33,6 +33,7 @@ public class MainAnimals extends JavaPlugin{
 		plugin = this;
 		MySQLAnimals.connect();
 		regCmdList();
+		SBAnimals.newScoreboardTimer();
 	}
 	@Override
 	public void onDisable() {
