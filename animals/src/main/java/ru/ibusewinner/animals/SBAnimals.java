@@ -55,7 +55,7 @@ public class SBAnimals implements Listener{
 					score2.setScore(14);
 					
 					Score score3 = objective.getScore("§0");
-					score3.setScore(7);
+					score3.setScore(13);
 					
 					int respawns = APIAnimals.getRespawns(player);
 					
