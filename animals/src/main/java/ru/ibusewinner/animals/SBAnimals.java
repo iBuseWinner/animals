@@ -22,7 +22,7 @@ public class SBAnimals implements Listener{
 	
 	ScoreboardManager manager = Bukkit.getScoreboardManager();
 	final Scoreboard board = manager.getNewScoreboard();
-	final Objective objective = board.registerNewObjective("AnimalLive", "dummy");
+	static Objective objective;
 	public static int timer = 0;
 	@SuppressWarnings("deprecation")
 	public static void newScoreboardTimer()
@@ -37,11 +37,11 @@ public class SBAnimals implements Listener{
 				{
 					ScoreboardManager manager = Bukkit.getScoreboardManager();
 					final Scoreboard board = manager.getMainScoreboard();
-					Objective objective;
 					try {
 						objective = board.registerNewObjective("AnimalLive", "dummy");
 					} catch (Exception e) {
 						objective = board.getObjective("AnimalLive");
+						e.printStackTrace();
 					}
 					
 					objective.setDisplaySlot(DisplaySlot.SIDEBAR);
