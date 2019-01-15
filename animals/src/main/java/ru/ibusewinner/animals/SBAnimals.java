@@ -21,8 +21,8 @@ public class SBAnimals implements Listener{
 	private static Map<Player, Integer> timers = new HashMap <Player, Integer>();
 	
 	ScoreboardManager manager = Bukkit.getScoreboardManager();
-	final Scoreboard board = manager.getMainScoreboard();
-	final Objective objective = board.registerNewObjective("AnimalLive", "dummy");
+	final Scoreboard board = manager.getNewScoreboard();
+	static Objective objective;
 	public static int timer = 0;
 	@SuppressWarnings("deprecation")
 	public static void newScoreboardTimer()
@@ -37,7 +37,6 @@ public class SBAnimals implements Listener{
 				{
 					ScoreboardManager manager = Bukkit.getScoreboardManager();
 					final Scoreboard board = manager.getMainScoreboard();
-					Objective objective;
 					try {
 						objective = board.registerNewObjective("AnimalLive", "dummy");
 					} catch (Exception e) {
