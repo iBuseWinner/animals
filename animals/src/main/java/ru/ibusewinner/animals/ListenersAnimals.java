@@ -49,7 +49,7 @@ public class ListenersAnimals implements Listener{
 		}
 		Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(),"nte reload");
 		
-		/*MobDisguise cat = new MobDisguise(DisguiseType.OCELOT, false);
+		MobDisguise cat = new MobDisguise(DisguiseType.OCELOT, false);
 		OcelotWatcher catw = (OcelotWatcher) cat.getWatcher();
 		catw.setType(Ocelot.Type.BLACK_CAT);
 		catw.setCustomName(player.getName());
@@ -86,7 +86,7 @@ public class ListenersAnimals implements Listener{
 		MobDisguise parrot = new MobDisguise(DisguiseType.PARROT, false);
 		FlagWatcher parrotw = parrot.getWatcher();
 		parrotw.setCustomName(player.getName());
-		parrotw.setCustomNameVisible(true);*/
+		parrotw.setCustomNameVisible(true);
 		if(APIAnimals.getAnimal(player) == 0) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
 			DisguiseAPI.undisguiseToAll(player);
@@ -173,11 +173,11 @@ public class ListenersAnimals implements Listener{
 			}
 		},0,20*2);
 
-		DisguiseAPI.setViewDisguiseToggled(player, true);
 		LocalBoost lb = new LocalBoost(player);
 		
 		noPushTeam.addPlayer(player);
 		player.setScoreboard(noPushScoreboard);
+		DisguiseAPI.setViewDisguiseToggled(player, false);
 	}
 
 	public static void noPush()
