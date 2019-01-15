@@ -9,12 +9,12 @@ public class PiarGC {
 	
 	private static ArrayList<String> messages;
 	public static int timer = 0;
-	private String VK = "§7[§c!§7]§3 Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh";
-	private String site = "§7[§c!§7]§3 Наш сайт: §dhttps://vk.cc/8V2iL9";
+	//private String VK = "§7[§c!§7]§3 Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh";
+	//private String site = "§7[§c!§7]§3 Наш сайт: §dhttps://vk.cc/8V2iL9";
 	//private String forum = "§7[§c!§7]§3 Наш форум: §awww.forum.скоро.net";
-	private String discord = "§7[§c!§7]§3 Наш дискорд: §9https://discord.gg/DDTDFgD";
-	private String donate = "§7[§c!§7]§3 Поддержать наш проект можно по ссылке: §bhttps://vk.cc/8V2iL9";
-	private String donate_cmd = "§7[§c!§7]§3 Включить бустер можно через: §e/donate";
+	//private String discord = "§7[§c!§7]§3 Наш дискорд: §9https://discord.gg/DDTDFgD";
+	//private String donate = "§7[§c!§7]§3 Поддержать наш проект можно по ссылке: §bhttps://vk.cc/8V2iL9";
+	//private String donate_cmd = "§7[§c!§7]§3 Включить бустер можно через: §e/donate";
 	
 	private int msgI = 0;
 	

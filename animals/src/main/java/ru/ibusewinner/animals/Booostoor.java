@@ -35,6 +35,7 @@ public class Booostoor {
 					{
 						TTA_Methods.removeBossBar(pl);
 						Bukkit.getScheduler().cancelTask(taskId);
+						agboostm = 1;
 					}
 				}
 				else 
@@ -50,6 +51,7 @@ public class Booostoor {
 					{
 						TTA_Methods.removeBossBar(pl);
 						Bukkit.getScheduler().cancelTask(taskId);
+						gboostm = 1;
 					}
 				}
 				else
