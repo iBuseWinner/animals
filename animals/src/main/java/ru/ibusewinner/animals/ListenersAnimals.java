@@ -93,34 +93,35 @@ public class ListenersAnimals implements Listener{
 			DisguiseAPI.undisguiseToAll(player);
 		}else if(APIAnimals.getAnimal(player) == 1) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
-			//DisguiseAPI.disguiseToAll(player,cat);
+			DisguiseAPI.disguiseToAll(player,cat);
 		}else if(APIAnimals.getAnimal(player) == 2) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
-			//DisguiseAPI.disguiseToAll(player,dog);
+			DisguiseAPI.disguiseToAll(player,dog);
 		}else if(APIAnimals.getAnimal(player) == 3) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
-			//DisguiseAPI.disguiseToAll(player,cow);
+			DisguiseAPI.disguiseToAll(player,cow);
 		}else if(APIAnimals.getAnimal(player) == 4) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
-			//DisguiseAPI.disguiseToAll(player,pig);
+			DisguiseAPI.disguiseToAll(player,pig);
 		}else if(APIAnimals.getAnimal(player) == 5) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
-			//DisguiseAPI.disguiseToAll(player,chicken);
+			DisguiseAPI.disguiseToAll(player,chicken);
 		}else if(APIAnimals.getAnimal(player) == 6) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
-			//DisguiseAPI.disguiseToAll(player,sheep);
+			DisguiseAPI.disguiseToAll(player,sheep);
 		}else if(APIAnimals.getAnimal(player) == 7) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
-			//DisguiseAPI.disguiseToAll(player,bear);
+			DisguiseAPI.disguiseToAll(player,bear);
 		}else if(APIAnimals.getAnimal(player) == 8) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
-			//DisguiseAPI.disguiseToAll(player,rabbid);
+			DisguiseAPI.disguiseToAll(player,rabbid);
 		}else if(APIAnimals.getAnimal(player) == 9) {
 			player.teleport(new Location(Bukkit.getWorld("world"), -24.5, 102.5, 473.5));
-			//DisguiseAPI.disguiseToAll(player,parrot);
+			DisguiseAPI.disguiseToAll(player,parrot);
 		}
+		DisguiseAPI.setViewDisguiseToggled(player,false);
 		try {
-			HologramAPI.displayHolos(player);
+			
 		}catch(Exception ex) {
 			Bukkit.getConsoleSender().sendMessage(MainAnimals.prefix+"§9meow §d;3");
 		}
