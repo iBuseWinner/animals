@@ -3,6 +3,9 @@ package ru.ibusewinner.animals.cmd;
 import org.bukkit.Bukkit;
 import org.bukkit.Material;
 import org.bukkit.Sound;
+import org.bukkit.boss.BarColor;
+import org.bukkit.boss.BarFlag;
+import org.bukkit.boss.BarStyle;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -14,8 +17,10 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
+import de.Herbystar.TTA.TTA_Methods;
 import ru.ibusewinner.animals.APIAnimals;
 import ru.ibusewinner.animals.MainAnimals;
+import ru.ibusewinner.animals.boosters.GlobalBoost;
 import ru.ibusewinner.animals.boosters.LocalBoost;
 
 public class CmdDonateAnimals implements CommandExecutor, Listener{
@@ -61,47 +66,59 @@ public class CmdDonateAnimals implements CommandExecutor, Listener{
 		Player p = (Player)e.getWhoClicked();
 		
 		if(e.getInventory().getName().equalsIgnoreCase(donator)) {
-//			if(e.getSlot() == 3) 	
-//			{
-//				int rgc = APIAnimals.removeGc(p.getName(), 200);				
-//				if (rgc == 1)
-//				{
-//					for(Player pl : Bukkit.getOnlinePlayers()) {
-//					TTA_Methods.createBossBar(pl,"§aГлобальный бустер §9x"+2+" §aот админа §5"+p.getName()+" §6("+30+"минут)",1.0,BarStyle.SOLID,BarColor.YELLOW,BarFlag.CREATE_FOG,true);
-//				}
-//					Booostoor b = new Booostoor();
-//					Booostoor.gboost = 30;
-//					Booostoor.gboostm = 2;					
-//					Booostoor.agboost = 30;
-//					Booostoor.agboostm = 2;
-//					Booostoor.booster = p.getName();
-//					b.timer();
-//					p.sendMessage(MainAnimals.prefix + "§aГлобальный буст x2 на 30 минут успешно куплен!");
-//				}
-//				else if (rgc == 2) 
-//					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов! Задонатьте ещё.");
-//				else p.sendMessage(MainAnimals.prefix + "§cНеизвестная ошибка! Обратитесь к администратору.");
-//			}
-			if(e.getSlot() == 4) 
+			if(e.getSlot() == 3) 	
 			{
-				int rgc = APIAnimals.removeGc(p.getName(), 150);
-				
+				if (GlobalBoost.isSet())
+				{
+					p.sendMessage("§cДождитесь окончания предыдущего глобального бустера, что бы купить новый!");
+				}
+				else
+				{
+					int rgc = APIAnimals.removeGc(p.getName(), 200);
+					if (rgc == 1)
+					{
+//						for(Player pl : Bukkit.getOnlinePlayers())	
+//							TTA_Methods.createBossBar(pl,"§aГлобальный бустер §9x"+2+" §aот админа §5"+p.getName()+" §6("+30+"минут)",1.0,BarStyle.SOLID,BarColor.YELLOW,BarFlag.CREATE_FOG,true);
+						GlobalBoost.set(2, 30);
+						p.sendMessage(MainAnimals.prefix + "§aГлобальный буст x2 на 30 минут успешно куплен!");
+						Bukkit.broadcastMessage("§aИгрок §c" + p.getName() + "§a купил глобальный буст §cx2 §aна §c30 §aминут");
+					}
+					else if (rgc == 2) 
+						p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов! Задонатьте ещё.");
+					else p.sendMessage(MainAnimals.prefix + "§cНеизвестная ошибка! Обратитесь к администратору.");
+				}
+				/*
+				int rgc = APIAnimals.removeGc(p.getName(), 200);				
 				if (rgc == 1)
 				{
-					MainAnimals.boosters.remove(p);
-					LocalBoost boost = new LocalBoost(p, 2, 30);
-					p.sendMessage(MainAnimals.prefix + "§aБуст §cx2 §aуспешно куплен/продлён на §c30 минут §aза §c150 грендкоинов!");
+					for(Player pl : Bukkit.getOnlinePlayers()) {
+					//TTA_Methods.createBossBar(pl,"§aГлобальный бустер §9x"+2+" §aот админа §5"+p.getName()+" §6("+30+"минут)",1.0,BarStyle.SOLID,BarColor.YELLOW,BarFlag.CREATE_FOG,true);
+					p.sendMessage(MainAnimals.prefix + "§aГлобальный буст x2 на 30 минут успешно куплен!");
 				}
 				else if (rgc == 2) 
-					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов! грендкоины вы можете купить на сайте §awww.скоро.ru/");
+					p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов! Задонатьте ещё.");
 				else p.sendMessage(MainAnimals.prefix + "§cНеизвестная ошибка! Обратитесь к администратору.");
+				*/
 			}
-			else
-			{ 
-				e.setCancelled(true);
+		}
+		if(e.getSlot() == 4) 
+		{
+			int rgc = APIAnimals.removeGc(p.getName(), 150);
+			
+			if (rgc == 1)
+			{
+				MainAnimals.boosters.remove(p);
+				LocalBoost boost = new LocalBoost(p, 2, 30);
+				p.sendMessage(MainAnimals.prefix + "§aБуст §cx2 §aуспешно куплен/продлён на §c30 минут §aза §c150 грендкоинов!");
 			}
+			else if (rgc == 2) 
+				p.sendMessage(MainAnimals.prefix + "§cУ вас недостаточно грендкоинов! грендкоины вы можете купить на сайте §awww.скоро.ru/");
+			else p.sendMessage(MainAnimals.prefix + "§cНеизвестная ошибка! Обратитесь к администратору.");
+		}
+		else
+		{ 
 			e.setCancelled(true);
 		}
+		e.setCancelled(true);
 	}
-
 }

@@ -10,6 +10,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.Herbystar.TTA.TTA_Methods;
+import ru.ibusewinner.animals.boosters.GlobalBoost;
 import ru.ibusewinner.animals.boosters.LocalBoost;
 import ru.ibusewinner.animals.cmd.CmdBoostAdmAnimals;
 import ru.ibusewinner.animals.cmd.CmdBredAnimals;
@@ -40,6 +41,7 @@ public class MainAnimals extends JavaPlugin{
 		MySQLAnimals.connect();
 		regCmdList();
 		SBAnimals.newScoreboardTimer();
+		new GlobalBoost();
 	}
 	@Override
 	public void onDisable() {

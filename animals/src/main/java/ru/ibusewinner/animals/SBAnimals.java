@@ -48,7 +48,7 @@ public class SBAnimals implements Listener{
 					
 					int income = APIAnimals.getIncome(player);
 					
-					Score score2 = objective.getScore("§aДоход: "+"§6"+String.valueOf(income)+"р/сек §bx"+APIAnimals.getLocalBoost(player) * GlobalBoost.agboostm * GlobalBoost.gboostm);
+					Score score2 = objective.getScore("§aДоход: "+"§6"+String.valueOf(income)+"р/сек §bx"+(APIAnimals.getLocalBoost(player) + GlobalBoost.boost));
 					score2.setScore(14);
 					
 					Score score3 = objective.getScore("§0");

@@ -21,7 +21,7 @@ public class CmdInfoAnimals implements CommandExecutor{
 					if(a.length == 0) {
 						s.sendMessage(MainAnimals.prefix+"§aВаша информация:");
 						s.sendMessage(MainAnimals.prefix+"§aБаланс: §c"+APIAnimals.getBal(send)+"рублей");
-						s.sendMessage(MainAnimals.prefix+"§aДоход: §c"+APIAnimals.getIncome(send)+"р/сек §bx"+APIAnimals.getLocalBoost(send) * GlobalBoost.agboostm * GlobalBoost.gboostm);
+						s.sendMessage(MainAnimals.prefix+"§aДоход: §c"+APIAnimals.getIncome(send)+"р/сек §bx"+(APIAnimals.getLocalBoost(send) + GlobalBoost.boost));
 						s.sendMessage(MainAnimals.prefix+"§aБустер: §cx"+APIAnimals.getLocalBoost(send));
 						s.sendMessage(MainAnimals.prefix+"§aУровень: §c"+APIAnimals.getLevel(send));
 						s.sendMessage(MainAnimals.prefix+"§aПерерождений: §c"+APIAnimals.getRespawns(send));
@@ -53,7 +53,7 @@ public class CmdInfoAnimals implements CommandExecutor{
 						}else {
 							s.sendMessage(MainAnimals.prefix+"§aИнформация "+target+":");
 							s.sendMessage(MainAnimals.prefix+"§aБаланс: §c"+APIAnimals.getBal(target)+"рублей");
-							s.sendMessage(MainAnimals.prefix+"§aДоход: §c"+APIAnimals.getIncome(target)+"р/сек §bx"+APIAnimals.getLocalBoost(target) * GlobalBoost.agboostm * GlobalBoost.gboostm);
+							s.sendMessage(MainAnimals.prefix+"§aДоход: §c"+APIAnimals.getIncome(target)+"р/сек §bx"+(APIAnimals.getLocalBoost(target) + GlobalBoost.boost));
 							s.sendMessage(MainAnimals.prefix+"§aБустер: §cx"+APIAnimals.getLocalBoost(target));
 							s.sendMessage(MainAnimals.prefix+"§aУровень: §c"+APIAnimals.getLevel(target));
 							s.sendMessage(MainAnimals.prefix+"§aПерерождений: §c"+APIAnimals.getRespawns(target));
