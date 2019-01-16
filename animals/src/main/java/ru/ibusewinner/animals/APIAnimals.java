@@ -380,7 +380,7 @@ public class APIAnimals {
 	public static void addBalBoost(Player p) {
 		try{
 			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET balance= ? WHERE uuid= ?");
-			ps.setInt(1, getBal(p) + (getIncome(p) * (getLocalBoost(p) + GlobalBoost.boost)));
+			ps.setInt(1, getBal(p) + (getIncome(p) * (getLocalBoost(p) * GlobalBoost.boost)));
 			ps.setString(2, p.getUniqueId().toString());
 			ps.executeUpdate();
 			ps.close();

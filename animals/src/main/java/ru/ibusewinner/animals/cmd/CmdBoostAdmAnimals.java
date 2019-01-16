@@ -78,7 +78,7 @@ public class CmdBoostAdmAnimals implements CommandExecutor{
 					{
 						try
 						{
-							if (Integer.parseInt(args[0]) == GlobalBoost.boost)
+							if (Integer.parseInt(args[1]) == GlobalBoost.boost)
 							{
 								GlobalBoost.remove();
 								Bukkit.broadcastMessage("§aГлобальный бустер был удалён администратором!");
@@ -92,6 +92,7 @@ public class CmdBoostAdmAnimals implements CommandExecutor{
 						{
 							sender.sendMessage("§cНекорректные аргументы!");
 							sender.sendMessage("§сИспользование: /alboost del <множитель>");
+							e.printStackTrace();
 						}
 					}
 					else sender.sendMessage("§cГлобальный бустер не установлен!");

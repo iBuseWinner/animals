@@ -13,7 +13,7 @@ public class MySQLAnimals {
 	public static String port = "3306";
 	public static String database = "animals";
 	public static String user = "root";
-	public static String password = "V6HY8mbR1dvZiG";
+	public static String password = "V6HY8mbR1dvZiG"; // V6HY8mbR1dvZiG
 	
 	public static Connection con;
 	

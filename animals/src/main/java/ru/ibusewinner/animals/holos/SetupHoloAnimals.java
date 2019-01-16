@@ -33,7 +33,7 @@ public class SetupHoloAnimals implements Listener{
 	}
 	@EventHandler
 	public void displayHolos(PlayerJoinEvent e) {
-		holo.displayHolo(e.getPlayer());
+//		holo.displayHolo(e.getPlayer());
 	}
 	@EventHandler
 	public void destroyHolos(PlayerQuitEvent e) {
