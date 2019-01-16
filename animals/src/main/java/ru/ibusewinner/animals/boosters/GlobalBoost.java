@@ -1,12 +1,13 @@
-package ru.ibusewinner.animals;
+package ru.ibusewinner.animals.boosters;
 
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
 import de.Herbystar.TTA.TTA_Methods;
+import ru.ibusewinner.animals.MainAnimals;
 
-public class Booostoor {
+public class GlobalBoost {
 	
 	//Длительность бустеров в минутах (Админский, обычный)
 	public static int agboost = 0;
@@ -15,10 +16,16 @@ public class Booostoor {
 	
 	public static int agboostm = 1;
 	public static int gboostm = 1;
-	private int timer = 0;
+	private static int timer = 0;
 	
 	public static String booster = " ";
 	public int taskId = 0;
+	
+	public GlobalBoost() 
+	{
+		
+	}
+	
 	@SuppressWarnings("deprecation")
 	public void timer() 
 	{

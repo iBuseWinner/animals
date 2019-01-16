@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
 
+import ru.ibusewinner.animals.boosters.GlobalBoost;
+
 public class APIAnimals {
 	
 	public static void createTable(){
@@ -378,7 +380,7 @@ public class APIAnimals {
 	public static void addBalBoost(Player p) {
 		try{
 			PreparedStatement ps = MySQLAnimals.getStatement("UPDATE players SET balance= ? WHERE uuid= ?");
-			ps.setInt(1, getBal(p) + (getIncome(p) * getLocalBoost(p) * Booostoor.agboostm * Booostoor.gboostm));
+			ps.setInt(1, getBal(p) + (getIncome(p) * getLocalBoost(p) * GlobalBoost.agboostm * GlobalBoost.gboostm));
 			ps.setString(2, p.getUniqueId().toString());
 			ps.executeUpdate();
 			ps.close();

@@ -10,8 +10,8 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 
 import de.Herbystar.TTA.TTA_Methods;
-import ru.ibusewinner.animals.Booostoor;
 import ru.ibusewinner.animals.MainAnimals;
+import ru.ibusewinner.animals.boosters.GlobalBoost;
 
 public class CmdBoostAdmAnimals implements CommandExecutor{
 
@@ -34,20 +34,20 @@ public class CmdBoostAdmAnimals implements CommandExecutor{
 								TTA_Methods.createBossBar(pl,"§aГлобальный бустер §9x"+mnoz+" §aот админа §5"+s.getName()+" §6("+dur+"минут)",1.0,BarStyle.SOLID,BarColor.YELLOW,BarFlag.CREATE_FOG,true);
 							}
 							
-							Booostoor.agboost = dur;
-							Booostoor.agboostm = mnoz;
-							Booostoor.booster = s.getName();
+							GlobalBoost.agboost = dur;
+							GlobalBoost.agboostm = mnoz;
+							GlobalBoost.booster = s.getName();
 							
 							Bukkit.broadcastMessage(MainAnimals.prefix+"§aГлобальный бустер §9x"+mnoz+" §aбыл включён администратором §5"+s.getName()+" §aна §9"+dur+" минут§a!");
 						}else if(a[0].equalsIgnoreCase("del") && a.length == 1) {
-							if(Booostoor.agboost >= 1) {
-								Booostoor.agboost = 0;
-								int boost = Booostoor.agboostm;
+							if(GlobalBoost.agboost >= 1) {
+								GlobalBoost.agboost = 0;
+								int boost = GlobalBoost.agboostm;
 								Bukkit.broadcastMessage(MainAnimals.prefix+"§aБустер §9x"+boost+" §aпринуждённо закончен администратором §5"+s.getName()+"§a!");
 								for (Player p : Bukkit.getOnlinePlayers()) {								
 									TTA_Methods.removeBossBar(p);
 								}
-								Booostoor.agboostm = 1;
+								GlobalBoost.agboostm = 1;
 							}else {
 								s.sendMessage(MainAnimals.prefix+"§cБустер и так уже закончен!");
 							}

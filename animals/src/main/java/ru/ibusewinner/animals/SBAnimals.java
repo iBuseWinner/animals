@@ -16,6 +16,7 @@ import org.bukkit.scoreboard.Scoreboard;
 import org.bukkit.scoreboard.ScoreboardManager;
 
 import de.Herbystar.TTA.TTA_Methods;
+import ru.ibusewinner.animals.boosters.GlobalBoost;
 
 public class SBAnimals implements Listener{
 	private static Map<Player, Integer> timers = new HashMap <Player, Integer>();
@@ -51,7 +52,7 @@ public class SBAnimals implements Listener{
 					
 					int income = APIAnimals.getIncome(player);
 					
-					Score score2 = objective.getScore("§aДоход: "+"§6"+String.valueOf(income)+"р/сек §bx"+APIAnimals.getLocalBoost(player) * Booostoor.agboostm * Booostoor.gboostm);
+					Score score2 = objective.getScore("§aДоход: "+"§6"+String.valueOf(income)+"р/сек §bx"+APIAnimals.getLocalBoost(player) * GlobalBoost.agboostm * GlobalBoost.gboostm);
 					score2.setScore(14);
 					
 					Score score3 = objective.getScore("§0");
@@ -159,7 +160,7 @@ public class SBAnimals implements Listener{
 							+"\n","\n§3Наша группа §9ВК§3: §1https://vk.com/zhiznzhivotnyh\n§3Наш сайт: §bhttps://vk.cc/8V2iL9\n");			
 				}
 			}
-		}, 0, 20*2);
+		}, 0, 20);
 	}
 /*	@EventHandler
 	public void onJoin(PlayerJoinEvent event) {

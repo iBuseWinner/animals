@@ -27,6 +27,7 @@ import me.libraryaddict.disguise.disguisetypes.FlagWatcher;
 import me.libraryaddict.disguise.disguisetypes.MobDisguise;
 import me.libraryaddict.disguise.disguisetypes.watchers.OcelotWatcher;
 import me.libraryaddict.disguise.disguisetypes.watchers.SheepWatcher;
+import ru.ibusewinner.animals.boosters.LocalBoost;
 public class ListenersAnimals implements Listener{
 
 	public static Scoreboard noPushScoreboard;

@@ -9,6 +9,7 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
 import de.Herbystar.TTA.TTA_Methods;
+import ru.ibusewinner.animals.boosters.LocalBoost;
 import ru.ibusewinner.animals.cmd.CmdBoostAdmAnimals;
 import ru.ibusewinner.animals.cmd.CmdBredAnimals;
 import ru.ibusewinner.animals.cmd.CmdChooseAnimals;
@@ -25,7 +26,7 @@ import ru.ibusewinner.animals.cmd.CmdsAnimals;
 public class MainAnimals extends JavaPlugin{
 	
 	public static String prefix = "§e§lЖизнь Животных§8 >>§7 ";
-	static Plugin plugin;
+	public static Plugin plugin;
 	public static Map<Player, LocalBoost> boosters = new HashMap<Player, LocalBoost>();
 	
 	@Override

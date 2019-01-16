@@ -1,7 +1,10 @@
-package ru.ibusewinner.animals;
+package ru.ibusewinner.animals.boosters;
 
 import org.bukkit.Bukkit;
 import org.bukkit.entity.Player;
+
+import ru.ibusewinner.animals.APIAnimals;
+import ru.ibusewinner.animals.MainAnimals;
 
 public class LocalBoost 
 {

@@ -15,8 +15,8 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 
 import ru.ibusewinner.animals.APIAnimals;
-import ru.ibusewinner.animals.LocalBoost;
 import ru.ibusewinner.animals.MainAnimals;
+import ru.ibusewinner.animals.boosters.LocalBoost;
 
 public class CmdDonateAnimals implements CommandExecutor, Listener{
 	
