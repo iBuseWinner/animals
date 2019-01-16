@@ -27,6 +27,7 @@ import me.libraryaddict.disguise.disguisetypes.FlagWatcher;
 import me.libraryaddict.disguise.disguisetypes.MobDisguise;
 import me.libraryaddict.disguise.disguisetypes.watchers.OcelotWatcher;
 import me.libraryaddict.disguise.disguisetypes.watchers.SheepWatcher;
+import ru.ibusewinner.animals.boosters.GlobalBoost;
 import ru.ibusewinner.animals.boosters.LocalBoost;
 public class ListenersAnimals implements Listener{
 
@@ -180,6 +181,8 @@ public class ListenersAnimals implements Listener{
 		noPushTeam.addPlayer(player);
 		player.setScoreboard(noPushScoreboard);
 		DisguiseAPI.setViewDisguiseToggled(player, false);
+		
+		GlobalBoost.addBar(player);
 	}
 
 	public static void noPush()

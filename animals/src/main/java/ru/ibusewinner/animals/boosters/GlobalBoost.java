@@ -5,6 +5,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.boss.BarColor;
 import org.bukkit.boss.BarFlag;
 import org.bukkit.boss.BarStyle;
+import org.bukkit.boss.BossBar;
 import org.bukkit.entity.Player;
 
 import de.Herbystar.TTA.TTA_Methods;
@@ -23,6 +24,7 @@ public class GlobalBoost {
 		if (taskId == -1)
 			timer();
 	}
+	private static boolean bossBared;
 	@SuppressWarnings("deprecation")
 	public void timer() 
 	{
@@ -34,30 +36,16 @@ public class GlobalBoost {
 			{
 				if (boosted)
 				{
-					for (Player p : Bukkit.getOnlinePlayers())
-					{
-						for (int i = 0; i < Bukkit.getOnlinePlayers().size(); i++)
-						{
-							try {
-							TTA_Methods.removeBossBar(p);
-							} catch (Exception e) 
-							{
-								MainAnimals.plugin.getLogger().warning("Boost Exception <:D");
-							}
-						}
-						TTA_Methods.createBossBar(p,"§aГлобальный бустер §9x"+boost+" §6("+boostTimer+" минут)",1.0,BarStyle.SOLID,BarColor.YELLOW,BarFlag.CREATE_FOG,true);
-					}
 					TTA_Methods.setBarTitle("§aГлобальный бустер §9x"+boost+" §6("+boostTimer+" минут)");
 					
-//					TTA_Methods.setBarTitle("§aГлобальный бустер §9x"+boost+" §6("+boostTimer+"минут)");
-					if (boostTimer <= 0)
-					{
-						remove();
-					}
 					timer++;
 					if (timer % 60 == 0)
 					{
 						boostTimer--;
+					}
+					if (boostTimer <= 0)
+					{
+						remove();
 					}
 				}
 				else timer = 0;
@@ -99,27 +87,40 @@ public class GlobalBoost {
 
 	public static void set(int mnoz, int time) 
 	{
+		remove();
 		boost = mnoz;
 		boostTimer = time;
 		boosted = true;
 		timer = 0;
+		bossBared = true;
+		
+		for (Player p : Bukkit.getOnlinePlayers()) addBar(p);
+	}
+	
+	public static void addBar(Player p)
+	{
+		if (isSet())
+			TTA_Methods.createBossBar(p,"§aГлобальный бустер §9x"+boost+" §6("+boostTimer+" минут)",1.0,BarStyle.SOLID,BarColor.YELLOW,BarFlag.CREATE_FOG,true);
+	}
+	
+	public static void removeBar(Player p)
+	{
+		try{
+			TTA_Methods.removeBossBar(p);
+		}catch (Exception e) {}
+	}
+	
+	public static void remove() 
+	{
+		for (Player p : Bukkit.getOnlinePlayers()) removeBar(p);
+		timer = 0;
+		boost = 1;
+		boostTimer = 0;
+		boosted = false;
 	}
 
 	public static boolean isSet() 
 	{
 		return boosted;
 	}
-
-	public static void remove() 
-	{
-		timer = 0;
-		boost = 1;
-		boostTimer = 0;
-		boosted = false;
-		for (Player p : Bukkit.getOnlinePlayers())
-			try{
-				TTA_Methods.removeBossBar(p);
-			}catch (Exception e) {}
-	}
-	
 }
