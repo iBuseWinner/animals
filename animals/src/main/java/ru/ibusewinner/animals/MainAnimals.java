@@ -13,6 +13,7 @@ import de.Herbystar.TTA.TTA_Methods;
 import ru.ibusewinner.animals.boosters.LocalBoost;
 import ru.ibusewinner.animals.cmd.CmdBoostAdmAnimals;
 import ru.ibusewinner.animals.cmd.CmdBredAnimals;
+import ru.ibusewinner.animals.cmd.CmdCfgRelAnimals;
 import ru.ibusewinner.animals.cmd.CmdChooseAnimals;
 import ru.ibusewinner.animals.cmd.CmdDonateAnimals;
 import ru.ibusewinner.animals.cmd.CmdGiveAnimals;
@@ -75,6 +76,7 @@ public class MainAnimals extends JavaPlugin{
 		Bukkit.getPluginCommand("algc").setExecutor(new CmdGiveGcAnimals());
 		Bukkit.getPluginCommand("donate").setExecutor(new CmdDonateAnimals());
 		Bukkit.getPluginCommand("levelup").setExecutor(new CmdLevelUp());
+		Bukkit.getPluginCommand("alcfg").setExecutor(new CmdCfgRelAnimals());
 		
 		PiarGC pgc = new PiarGC();
 	}
