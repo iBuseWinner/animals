@@ -37,7 +37,7 @@ public class SetupHoloAnimals implements Listener{
 	}
 	@EventHandler
 	public void destroyHolos(PlayerQuitEvent e) {
-		holo.destroyHolo(e.getPlayer());
+//		holo.destroyHolo(e.getPlayer());
 	}
 	
 }
